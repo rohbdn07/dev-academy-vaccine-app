@@ -1,13 +1,24 @@
 import './App.css';
 import HomePage from './pages/HomePage';
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { store } from './Redux/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <HomePage />
-      </header>
-    </div>
+   <Provider store={store}>
+      <Router>
+       <div className="App">
+            <HomePage />
+       </div>
+      </Router>
+   </Provider>
+   
   );
 }
 
