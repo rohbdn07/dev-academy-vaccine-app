@@ -1,0 +1,6 @@
+.homepage_wrapper{
+    display: block;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+}
