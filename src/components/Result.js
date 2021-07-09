@@ -7,11 +7,10 @@ export default function Result() {
     const dispatch = useDispatch();
     const {allData} = useSelector(state => state.dataReducer)
     let count = 0
-    let total = 0
-    let getValue = 0
     let kysArray = []
     let HyksArray = []
     let TyksArray = []
+    let OysArray = []
 
 
     useEffect(() => {
@@ -35,19 +34,20 @@ export default function Result() {
         } else if (item.healthCareDistrict === 'HYKS') {
             count += 1;
             HyksArray.push(`${count},`)
-        } else {
+        } else if (item.healthCareDistrict === 'TYKS'){
             count += 1;
             TyksArray.push(`${count},`)
+        } else {
+            count += 1;
+            OysArray.push(`${count},`)
         }
     })}
     fetchOrderedData()
 
     return (
         <>
-            <h3>Result section</h3>
-         
-            <div>
-                <ul className="list-group col-4">
+            <div>     
+                <ul className="list-group">
                     <p>Vaccine name: Antiqua</p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     The total vaccine ordered by KYS:
@@ -60,6 +60,10 @@ export default function Result() {
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     The total vaccine ordered by TYKS:
                         <span className="badge bg-primary rounded-pill">{TyksArray.length}</span>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
+                    The total vaccine ordered by OYS:
+                        <span className="badge bg-primary rounded-pill">{OysArray.length}</span>
                     </li>
                     
                 <div>
