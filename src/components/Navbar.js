@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
     return (
        <>
-            <nav className="navbar navbar-light bg-primary">
+            <nav className="navbar navbar-light bg-info">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand">
-                    <img src="public/logo512.png" alt="" width="30" height="24" className="d-inline-block align-text-top" />
-                    Dev-vaccine
+                        <b>Dev-vaccine</b>
                     </Link>
                 </div>
             </nav>

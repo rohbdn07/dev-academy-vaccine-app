@@ -1,9 +1,11 @@
 import React from 'react';
 import SearchForm from '../components/SearchForm';
 import Navbar from '../components/Navbar';
-import Result from '../components/Result';
+import AntiquaResult from '../components/AntiquaResult';
 import BarChart_Antiqua from '../components/BarChart_Antiqua';
 import './pages.css';
+import SolarBuddhicaResult from '../components/SolarBuddhicaResult';
+import ZerpfyResult from '../components/ZerpfyResult';
 
 export default function HomePage() {
     return (
@@ -13,14 +15,21 @@ export default function HomePage() {
            <div className="homepage_wrapper col-lg-12">
                 <div className="homepage_header col-11 mx-auto">
                     <h3>Result section</h3>
-                    <p>The given data(s) are cateogized into different intresting informations. 
+                    <p>The given data(s) are categorized into different intresting informations. 
                         Informations are presented in the form of Graphs and textual form.</p>
                 </div>
                 <div className="hompage_result col-11 mx-auto">
-                    <Result />
-                    <BarChart_Antiqua />
+                    <AntiquaResult />
                 </div>
-            
+                <hr />
+                <div className="hompage_result col-11 mx-auto">
+                    <SolarBuddhicaResult />
+                </div>
+                <hr />
+                <div className="hompage_result col-11 mx-auto">
+                    <ZerpfyResult />
+                </div>
+                <hr />
            </div>
         </>
     )

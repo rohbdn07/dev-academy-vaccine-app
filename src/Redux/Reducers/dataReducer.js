@@ -1,7 +1,9 @@
-import { GET_DATA } from '../Constants/action-types';
+import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA } from '../Constants/action-types';
 
 const initalstate = {
-    allData : []
+    allAntiquaData : [],
+    allSolarBuddhicaData : [],
+    allZerpfyData : []
 }
 
 export default function dataReducer(state = initalstate, action ) {
@@ -9,10 +11,22 @@ export default function dataReducer(state = initalstate, action ) {
        case GET_DATA:
            return {
                ...state,
-               allData : action.payload
+               allAntiquaData : action.payload
            }
            break;
-   
+
+        case GET_SOLARBUDDHICA_DATA:
+            return {
+                ...state,
+                allSolarBuddhicaData : action.payload
+            }
+        
+        case GET_ZERPFY_DATA:
+            return {
+                ...state,
+                allZerpfyData : action.payload
+            }
+            
        default:
            return state
            break;

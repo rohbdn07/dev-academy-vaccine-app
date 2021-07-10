@@ -1,1 +1,4 @@
-export const GET_DATA = "GET_DATA"
+export const GET_DATA = "GET_DATA";
+export const GET_SOLARBUDDHICA_DATA = "GET_SOLARBUDDHICA_DATA";
+export const GET_ZERPFY_DATA = "GET_ZERPFY_DATA";
+
