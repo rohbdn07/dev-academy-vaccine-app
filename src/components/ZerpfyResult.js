@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { zerpfy }  from '../data/zerpfy';
 import {useDispatch, useSelector} from 'react-redux'
 import {getSolarBuddhicaAction, getZerpfyAction} from '../Redux/Action/getData-action';
-import BarChart_Antiqua from './BarChart_Antiqua';
+import BarChart_producers from './BarChart_producers';
 import TextInfo from './TextInfo';
 
 export default function ZerpfyResult() {
@@ -66,7 +66,7 @@ export default function ZerpfyResult() {
     return (
         <>
             <TextInfo receivedVaccineArray={receivedVaccineArray.length} dataLength={allZerpfyData.length} VaccineName={VaccineName} kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
-            <BarChart_Antiqua kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
+            <BarChart_producers kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
         </>
     )
 }

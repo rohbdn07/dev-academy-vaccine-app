@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { antiquaData }  from '../data/antiqua';
 import {useDispatch, useSelector} from 'react-redux'
 import {getDataAction} from '../Redux/Action/getData-action';
-import BarChart_Antiqua from './BarChart_Antiqua';
+import BarChart_producers from './BarChart_producers';
 import TextInfo from './TextInfo';
 
 export default function AntiquaResult() {
@@ -66,7 +66,7 @@ export default function AntiquaResult() {
     return (
         <>
             <TextInfo receivedVaccineArray={receivedVaccineArray.length} VaccineName={VaccineName} dataLength={allAntiquaData.length} kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
-            <BarChart_Antiqua kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
+            <BarChart_producers kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
         </>
     )
 }

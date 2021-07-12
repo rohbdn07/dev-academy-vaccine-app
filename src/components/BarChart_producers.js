@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import { LineChart,Line,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-export default function BarChart_Antiqua(props) {
+export default function BarChart_producers(props) {
 
   const {kysArray, HyksArray, TyksArray, OysArray} = props;
 
