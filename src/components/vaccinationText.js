@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import './style.css';
 
 export default function VaccinationText(props) {
     const {totalVaccinationNumber, totalFemaleTakenVaccine, totalMaleTakenVaccine, totalNonBinaryTakenVaccine} = props
     return (
       <>
-             <div>     
+             <div className="textInfo">     
                 <ul className="list-group">
                     <p>Vaccination</p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">

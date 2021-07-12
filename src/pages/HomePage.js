@@ -15,12 +15,12 @@ export default function HomePage() {
             {/* <SearchForm /> */}
            <div className="homepage_wrapper col-lg-12">
                 <div className="homepage_header col-11 mx-auto">
-                    <h3>Result section</h3>
-                    <p>The given data(s) are categorized into different intresting informations. 
-                        Informations are presented in the form of Graphs and textual form.</p>
+                    <h3>Vaccines information:</h3>
+                    <p>The given data(s) are categorized into different intresting information. 
+                        Information are presented in the form of Graphs and textual form.</p>
                 </div>
                 <h6 className="col-11 mx-auto pt-3">
-                    Ordered vaccines are:
+                    Ordered vaccines:
                 </h6>
                 <div className="hompage_result col-11 mx-auto">
                     <AntiquaResult />
@@ -35,7 +35,7 @@ export default function HomePage() {
                 </div>
                 <hr />
                 <h6 className="col-11 mx-auto pt-3">
-                    Vaccination info are:
+                    Vaccination info:
                 </h6>
                 <div className="hompage_result col-11 mx-auto">
                     <VaccinationResult/>

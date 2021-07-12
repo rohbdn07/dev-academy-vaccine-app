@@ -3,6 +3,8 @@ import { vaccination }  from '../data/vaccination';
 import {useDispatch, useSelector} from 'react-redux';
 import {getVaccinationAction} from '../Redux/Action/getData-action';
 import VaccinationText from './vaccinationText';
+import PieChart_vaccination from './PieChart_vaccination';
+import './style.css';
 
 export default function VaccinationResult() {
     const dispatch = useDispatch();
@@ -60,10 +62,18 @@ export default function VaccinationResult() {
 
     return (
         <>
+        <div className="col-10 vaccinationResult">
             <VaccinationText totalVaccinationNumber={totalVaccinationNumber.length} 
-            totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
+                totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
+                totalMaleTakenVaccine={totalMaleTakenVaccine.length}
+                totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length} />
+
+            <PieChart_vaccination totalVaccinationNumber={totalVaccinationNumber.length}
             totalMaleTakenVaccine={totalMaleTakenVaccine.length}
+            totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
             totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length} />
+        </div>
+          
         </>
     )
 }

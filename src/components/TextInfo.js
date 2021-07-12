@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 
 export default function TextInfo(props) {
@@ -6,7 +7,7 @@ export default function TextInfo(props) {
     // const {allAntiquaData, allSolarBuddhicaData} = useSelector(state => state.dataReducer)
     return (
       <>
-            <div>     
+            <div className="textInfo">     
                 <ul className="list-group">
                     <p>Vaccine name:<b>{VaccineName}</b></p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">

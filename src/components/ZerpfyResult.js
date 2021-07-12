@@ -65,8 +65,10 @@ export default function ZerpfyResult() {
 
     return (
         <>
-            <TextInfo receivedVaccineArray={receivedVaccineArray.length} dataLength={allZerpfyData.length} VaccineName={VaccineName} kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
-            <BarChart_producers kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
+            <div className="col-12 vaccinationResult">
+                <TextInfo receivedVaccineArray={receivedVaccineArray.length} dataLength={allZerpfyData.length} VaccineName={VaccineName} kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
+                <BarChart_producers kysArray={kysArray.length} HyksArray={HyksArray.length} TyksArray={TyksArray.length} OysArray={OysArray.length}/>
+            </div>
         </>
     )
 }
