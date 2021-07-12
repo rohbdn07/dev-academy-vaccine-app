@@ -1,0 +1,14 @@
+.vaccinationResult{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.textInfo{
+    width:27rem ;
+}
+
+.barchart{
+    max-width: 50rem;
+}
