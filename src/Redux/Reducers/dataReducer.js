@@ -1,9 +1,10 @@
-import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA } from '../Constants/action-types';
+import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA, VACCINATION_DONE } from '../Constants/action-types';
 
 const initalstate = {
     allAntiquaData : [],
     allSolarBuddhicaData : [],
-    allZerpfyData : []
+    allZerpfyData : [],
+    allVaccinationData : []
 }
 
 export default function dataReducer(state = initalstate, action ) {
@@ -27,6 +28,11 @@ export default function dataReducer(state = initalstate, action ) {
                 allZerpfyData : action.payload
             }
             
+        case VACCINATION_DONE:
+                return {
+                    ...state,
+                    allVaccinationData : action.payload
+                }
        default:
            return state
            break;

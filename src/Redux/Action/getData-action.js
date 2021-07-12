@@ -1,4 +1,4 @@
-import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA} from '../Constants/action-types';
+import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA, VACCINATION_DONE} from '../Constants/action-types';
 
 export const getDataAction = (antiquaData) => {
     return (
@@ -23,6 +23,15 @@ export const getZerpfyAction = (zerpfy) => {
         {
             type: GET_ZERPFY_DATA,
             payload:zerpfy
+        }
+    )
+}
+
+export const getVaccinationAction = (vaccination) => {
+    return (
+        {
+            type: VACCINATION_DONE,
+            payload:vaccination
         }
     )
 }
