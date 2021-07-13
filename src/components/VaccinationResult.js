@@ -2,18 +2,20 @@ import React, {useEffect} from 'react';
 import { vaccination }  from '../data/vaccination';
 import {useDispatch, useSelector} from 'react-redux';
 import {getVaccinationAction} from '../Redux/Action/getData-action';
-import VaccinationText from './vaccinationText';
+import VaccinationText from './VaccinationText';
 import PieChart_vaccination from './PieChart_vaccination';
 import './style.css';
 
 export default function VaccinationResult() {
     const dispatch = useDispatch();
-    const { allVaccinationData } = useSelector(state => state.dataReducer);
+    const { allVaccinationData, allAntiquaData, allSolarBuddhicaData, allZerpfyData } = useSelector(state => state.dataReducer);
     let count = 0;
+    let getValue = 0;
     let totalVaccinationNumber = [];
     let totalFemaleTakenVaccine = [];
     let totalMaleTakenVaccine = [];
-    let totalNonBinaryTakenVaccine = []
+    let totalNonBinaryTakenVaccine = [];
+   
 
     useEffect(() => {
        try {
@@ -28,7 +30,7 @@ export default function VaccinationResult() {
         
     }
 
-    const fetchVaccination = () =>  {
+    const fetchVaccinationOnGender = () =>  {
         return allVaccinationData.map((item, index)=> {
            if (item) {
             count += 1;
@@ -46,7 +48,29 @@ export default function VaccinationResult() {
                totalNonBinaryTakenVaccine.push(`${count},`)
            }
     })}
-    fetchVaccination()
+    fetchVaccinationOnGender()
+
+const fetchVaccinationOfSolarBuddhica = allVaccinationData.filter((allVacccinationItem)=> {
+    return allSolarBuddhicaData.some((solarVaccineItem)=> {
+        return allVacccinationItem.sourceBottle === solarVaccineItem.id;
+    })
+})
+// console.log('the result is', fetchVaccinationOfSolarBuddhica)
+
+const fetchVaccinationOfAntique = allVaccinationData.filter((allVacccinationItem)=> {
+    return allAntiquaData.some((antiuqeVaccineItem)=> {
+        return allVacccinationItem.sourceBottle === antiuqeVaccineItem.id;
+    })
+})
+// console.log('the result is', fetchVaccinationOfAntique.length)
+
+const fetchVaccinationOfZerpfy = allVaccinationData.filter((allVacccinationItem)=> {
+    return allZerpfyData.some((zerpfyVaccineItem)=> {
+        return allVacccinationItem.sourceBottle === zerpfyVaccineItem.id;
+    })
+})
+// console.log('the result is', fetchVaccinationOfZerpfy.length)
+
 
 //     const fetchReceivedVaccine = () => {
 //         allZerpfyData.map((item)=> {
@@ -66,12 +90,18 @@ export default function VaccinationResult() {
             <VaccinationText totalVaccinationNumber={totalVaccinationNumber.length} 
                 totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
                 totalMaleTakenVaccine={totalMaleTakenVaccine.length}
-                totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length} />
+                totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length}
+                totalAntiqueVaccineUsed={fetchVaccinationOfAntique.length}
+                totalSolarBuddhicaVaccineUsed={fetchVaccinationOfSolarBuddhica.length}
+                totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length} />
 
             <PieChart_vaccination totalVaccinationNumber={totalVaccinationNumber.length}
             totalMaleTakenVaccine={totalMaleTakenVaccine.length}
             totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
-            totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length} />
+            totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length}
+            totalAntiqueVaccineUsed={fetchVaccinationOfAntique.length}
+            totalSolarBuddhicaVaccineUsed={fetchVaccinationOfSolarBuddhica.length}
+            totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length}  />
         </div>
           
         </>

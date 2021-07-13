@@ -1,18 +1,35 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Tooltip, Sector, Cell, Legend } from 'recharts';
+import React from 'react';
+import { PieChart, Pie, Tooltip, Cell, Legend } from 'recharts';
 
 
 
 export default function PieChart_vaccination (props) {
-    const {totalVaccinationNumber, totalMaleTakenVaccine, totalFemaleTakenVaccine, totalNonBinaryTakenVaccine} = props;
+    const {totalVaccinationNumber, 
+      totalMaleTakenVaccine,
+       totalFemaleTakenVaccine, 
+       totalNonBinaryTakenVaccine,
+       totalAntiqueVaccineUsed,
+       totalSolarBuddhicaVaccineUsed,
+       totalZerpfyVaccineUsed
+       } = props;
 
-    const data = [
+    const genderData = [
         { name: 'Male',
          value: totalMaleTakenVaccine },
         { name: 'Female', 
         value: totalFemaleTakenVaccine },
         { name: 'Non-binary', 
         value: totalNonBinaryTakenVaccine },
+       
+      ];
+
+    const vaccineDoneData = [
+        { name: 'Antique',
+         value: totalAntiqueVaccineUsed },
+        { name: 'SolarBuddhica', 
+        value: totalSolarBuddhicaVaccineUsed },
+        { name: 'Zerpfy', 
+        value: totalZerpfyVaccineUsed },
        
       ];
       
@@ -32,25 +49,47 @@ export default function PieChart_vaccination (props) {
       };
 
     return (
-    
-        <PieChart width={300} height={300}>
-        <Tooltip />
-        <Legend />
-          <Pie
-            data={data}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={90}
-            fill="#8884d8"
-            dataKey="value"
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
+        <>
+            <PieChart width={300} height={300}>
+            <Tooltip />
+            <Legend />
+            <Pie
+                data={genderData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={renderCustomizedLabel}
+                outerRadius={90}
+                fill="#8884d8"
+                dataKey="value"
+            >
+                {genderData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+            </Pie>
+            </PieChart>
+
+            <PieChart width={300} height={300}>
+              <Tooltip />
+              <Legend />
+              <Pie
+                  data={vaccineDoneData}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  label={renderCustomizedLabel}
+                  outerRadius={90}
+                  fill="#8884d8"
+                  dataKey="value"
+              >
+                  {vaccineDoneData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+              </Pie>
+            </PieChart>
+        </>
+       
+        
     );
   
 }

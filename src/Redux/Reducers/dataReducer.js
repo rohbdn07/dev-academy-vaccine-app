@@ -14,7 +14,6 @@ export default function dataReducer(state = initalstate, action ) {
                ...state,
                allAntiquaData : action.payload
            }
-           break;
 
         case GET_SOLARBUDDHICA_DATA:
             return {
