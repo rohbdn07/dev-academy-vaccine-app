@@ -6,7 +6,12 @@
 }
 
 .textInfo{
-    width:27rem ;
+    width:28rem ;
+    
+}
+
+.textInfo li, p{
+    font-size: 0.9rem;
 }
 
 .barchart{

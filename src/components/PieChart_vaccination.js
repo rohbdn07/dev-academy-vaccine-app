@@ -61,7 +61,7 @@ export default function PieChart_vaccination (props) {
                     cy="50%"
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={90}
+                    outerRadius={85}
                     fill="#8884d8"
                     dataKey="value"
                 >
@@ -83,7 +83,7 @@ export default function PieChart_vaccination (props) {
                       cy="50%"
                       labelLine={false}
                       label={renderCustomizedLabel}
-                      outerRadius={90}
+                      outerRadius={85}
                       fill="#8884d8"
                       dataKey="value"
                   >

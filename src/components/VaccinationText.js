@@ -28,7 +28,7 @@ export default function VaccinationText(props) {
                     </li>
                     
                     <div>
-                            <p>The total number of vaccination done are: <span class="badge fs-6 my-3 bg-info rounded-pill">{totalVaccinationNumber}</span></p>
+                            <p>The total number of vaccination done are: <span class="badge fs-7 mt-3 bg-info rounded-pill">{totalVaccinationNumber}</span></p>
                     </div>
                       
                 </ul>
@@ -48,7 +48,7 @@ export default function VaccinationText(props) {
                     </li>
                     
                     <div>
-                            <p>The total number of vaccination done are: <span class="badge fs-6 my-3 bg-info rounded-pill">{totalVaccinationNumber}</span></p>
+                            <p>The total number of vaccination done are: <span class="badge fs-7 mt-3 bg-info rounded-pill">{totalVaccinationNumber}</span></p>
                     </div>
                       
                 </ul>

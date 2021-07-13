@@ -28,7 +28,7 @@ export default function BarChart_producers(props) {
     return (
         <>
            <div className="barchart">
-                  <BarChart width={730} height={250} data={data}>
+                  <BarChart width={600} height={250} data={data}>
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="name" />
                       <YAxis />

@@ -86,24 +86,24 @@ const fetchVaccinationOfZerpfy = allVaccinationData.filter((allVacccinationItem)
 
     return (
         <>
-        <div className="col-10 vaccinationResult">
-            <VaccinationText totalVaccinationNumber={totalVaccinationNumber.length} 
-                totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
+            <div className="col-10 vaccinationResult">
+                <VaccinationText totalVaccinationNumber={totalVaccinationNumber.length} 
+                    totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
+                    totalMaleTakenVaccine={totalMaleTakenVaccine.length}
+                    totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length}
+                    totalAntiqueVaccineUsed={fetchVaccinationOfAntique.length}
+                    totalSolarBuddhicaVaccineUsed={fetchVaccinationOfSolarBuddhica.length}
+                    totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length} />
+
+                <PieChart_vaccination totalVaccinationNumber={totalVaccinationNumber.length}
                 totalMaleTakenVaccine={totalMaleTakenVaccine.length}
+                totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
                 totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length}
                 totalAntiqueVaccineUsed={fetchVaccinationOfAntique.length}
                 totalSolarBuddhicaVaccineUsed={fetchVaccinationOfSolarBuddhica.length}
-                totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length} />
-
-            <PieChart_vaccination totalVaccinationNumber={totalVaccinationNumber.length}
-            totalMaleTakenVaccine={totalMaleTakenVaccine.length}
-            totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
-            totalNonBinaryTakenVaccine={totalNonBinaryTakenVaccine.length}
-            totalAntiqueVaccineUsed={fetchVaccinationOfAntique.length}
-            totalSolarBuddhicaVaccineUsed={fetchVaccinationOfSolarBuddhica.length}
-            totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length}  />
-        </div>
-          
+                totalZerpfyVaccineUsed={fetchVaccinationOfZerpfy.length}  />
+                
+            </div> 
         </>
     )
 }
