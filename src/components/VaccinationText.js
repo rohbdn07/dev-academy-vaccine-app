@@ -13,7 +13,7 @@ export default function VaccinationText(props) {
       <>
              <div className="textInfo">     
                 <ul className="list-group">
-                    <p>Vaccination on the basis of gender:</p>
+                    <p>Vaccination on the basis of <b>Gender</b>:</p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of male taken vaccine:
                         <span className="badge bg-success rounded-pill">{totalMaleTakenVaccine}</span>
@@ -24,7 +24,7 @@ export default function VaccinationText(props) {
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of non-binary taken vaccine:
-                        <span className="badge bg-danger rounded-pill">{totalNonBinaryTakenVaccine}</span>
+                        <span className="badge bg-warning rounded-pill">{totalNonBinaryTakenVaccine}</span>
                     </li>
                     
                     <div>
@@ -33,7 +33,7 @@ export default function VaccinationText(props) {
                       
                 </ul>
                 <ul className="list-group">
-                    <p>Vaccination on the basis of producer:</p>
+                    <p>Vaccination on the basis of <b>Producer</b>:</p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of Antique vaccines used:
                         <span className="badge bg-success rounded-pill">{totalAntiqueVaccineUsed}</span>
@@ -44,7 +44,7 @@ export default function VaccinationText(props) {
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of Zerpfy vaccines used:
-                        <span className="badge bg-danger rounded-pill">{totalZerpfyVaccineUsed}</span>
+                        <span className="badge bg-warning rounded-pill">{totalZerpfyVaccineUsed}</span>
                     </li>
                     
                     <div>

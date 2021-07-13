@@ -50,46 +50,52 @@ export default function PieChart_vaccination (props) {
 
     return (
         <>
-            <PieChart width={300} height={300}>
-            <Tooltip />
-            <Legend />
-            <Pie
-                data={genderData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={renderCustomizedLabel}
-                outerRadius={90}
-                fill="#8884d8"
-                dataKey="value"
-            >
-                {genderData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-            </Pie>
-            </PieChart>
+          <div className="piechart d-block">
+            <div className="piechart_genderData">
+              <PieChart width={300} height={300}>
+                <Tooltip />
+                <Legend />
+                <Pie
+                    data={genderData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={renderCustomizedLabel}
+                    outerRadius={90}
+                    fill="#8884d8"
+                    dataKey="value"
+                >
+                    {genderData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                </Pie>
+                </PieChart>
 
-            <PieChart width={300} height={300}>
-              <Tooltip />
-              <Legend />
-              <Pie
-                  data={vaccineDoneData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={renderCustomizedLabel}
-                  outerRadius={90}
-                  fill="#8884d8"
-                  dataKey="value"
-              >
-                  {vaccineDoneData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-              </Pie>
-            </PieChart>
+            </div>
+
+            <div className="piechart_producerData">
+              <PieChart width={300} height={300}>
+                  <Tooltip />
+                  <Legend />
+                  <Pie
+                      data={vaccineDoneData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={renderCustomizedLabel}
+                      outerRadius={90}
+                      fill="#8884d8"
+                      dataKey="value"
+                  >
+                      {vaccineDoneData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                  </Pie>
+                </PieChart>
+            </div>
+          </div>
+           
         </>
-       
-        
     );
   
 }
