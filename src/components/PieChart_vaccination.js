@@ -3,7 +3,7 @@ import { PieChart, Pie, Tooltip, Cell, Legend } from 'recharts';
 
 
 
-export default function PieChart_vaccination (props) {
+export default function PieChartVaccination (props) {
     const {totalVaccinationNumber, 
       totalMaleTakenVaccine,
        totalFemaleTakenVaccine, 

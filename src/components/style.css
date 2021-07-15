@@ -17,3 +17,10 @@
 .barchart{
     max-width: 50rem;
 }
+
+.pieChart{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+   
+}

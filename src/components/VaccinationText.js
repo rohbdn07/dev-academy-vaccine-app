@@ -8,7 +8,8 @@ export default function VaccinationText(props) {
          totalNonBinaryTakenVaccine,
          totalAntiqueVaccineUsed,
          totalSolarBuddhicaVaccineUsed,
-         totalZerpfyVaccineUsed } = props
+         totalZerpfyVaccineUsed } = props;
+
     return (
       <>
              <div className="textInfo">     
@@ -36,11 +37,11 @@ export default function VaccinationText(props) {
                     <p>Vaccination on the basis of <b>Producer</b>:</p>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of Antique vaccines used:
-                        <span className="badge bg-success rounded-pill">{totalAntiqueVaccineUsed}</span>
+                        <span className="badge bg-primary rounded-pill">{totalAntiqueVaccineUsed}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of SolarBuddhica vaccines used:
-                        <span className="badge bg-primary rounded-pill">{totalSolarBuddhicaVaccineUsed}</span>
+                        <span className="badge bg-success rounded-pill">{totalSolarBuddhicaVaccineUsed}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                     No. of Zerpfy vaccines used:

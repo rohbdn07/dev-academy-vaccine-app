@@ -4,7 +4,7 @@ import './style.css';
 
 export default function TextInfo(props) {
     const {receivedVaccineArray, VaccineName, kysArray, HyksArray, TyksArray, OysArray, dataLength} = props;
-    // const {allAntiquaData, allSolarBuddhicaData} = useSelector(state => state.dataReducer)
+    
     return (
       <>
             <div className="textInfo">     

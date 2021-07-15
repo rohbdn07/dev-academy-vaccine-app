@@ -34,6 +34,5 @@ export default function dataReducer(state = initalstate, action ) {
                 }
        default:
            return state
-           break;
    }
 }

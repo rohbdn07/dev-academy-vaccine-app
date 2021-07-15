@@ -7,6 +7,7 @@ import './pages.css';
 import SolarBuddhicaResult from '../components/SolarBuddhicaResult';
 import ZerpfyResult from '../components/ZerpfyResult';
 import VaccinationResult from '../components/VaccinationResult';
+import DateSelection from '../components/DateSelection';
 
 export default function HomePage() {
     return (
@@ -39,6 +40,10 @@ export default function HomePage() {
                 </h6>
                 <div className="hompage_result col-11 mx-auto">
                     <VaccinationResult/>
+                </div>
+                <hr />
+                <div className="hompage_result col-11 mx-auto">
+                    <DateSelection/>
                 </div>
                 <hr />
            </div>
