@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchForm from '../components/SearchForm';
 import Navbar from '../components/Navbar';
-import AntiquaResult from '../components/AntiquaResult';
+import AntiquaResult from '../components/AntiquaResult/AntiquaResult';
 import BarChart_producers from '../components/BarChart_producers';
 import './pages.css';
 import SolarBuddhicaResult from '../components/SolarBuddhicaResult';

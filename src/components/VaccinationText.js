@@ -1,4 +1,5 @@
 import React from 'react';
+import PropsTypes from 'prop-types';
 import './style.css';
 
 export default function VaccinationText(props) {
@@ -56,4 +57,14 @@ export default function VaccinationText(props) {
             </div>
       </>
     )
+}
+
+VaccinationText.PropsTypes = {
+    totalVaccinationNumber : PropsTypes.number.isRequired,
+    totalFemaleTakenVaccine : PropsTypes.number.isRequired,
+    totalMaleTakenVaccine : PropsTypes.number.isRequired,
+    totalNonBinaryTakenVaccine :  PropsTypes.number.isRequired,
+    totalAntiqueVaccineUsed : PropsTypes.number.isRequired,
+    totalSolarBuddhicaVaccineUsed : PropsTypes.number.isRequired,
+    totalZerpfyVaccineUsed : PropsTypes.number.isRequired
 }

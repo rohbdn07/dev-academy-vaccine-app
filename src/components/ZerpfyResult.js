@@ -3,7 +3,7 @@ import { zerpfy }  from '../data/zerpfy';
 import {useDispatch, useSelector} from 'react-redux'
 import {getSolarBuddhicaAction, getZerpfyAction} from '../Redux/Action/getData-action';
 import BarChart_producers from './BarChart_producers';
-import TextInfo from './TextInfo';
+import TextInfo from './TextInfo/TextInfo';
 
 export default function ZerpfyResult() {
     const dispatch = useDispatch();
