@@ -2,8 +2,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import HomePage from './HomePage';
 
-
-
 describe('HomePage', () => {
     it('should contain classname', ()=> {
         const wrapper = shallow(< HomePage/>);
@@ -34,7 +32,5 @@ describe('HomePage', () => {
         const wrapper = shallow(< HomePage/>);
         expect(wrapper.find('DateSelection')).toHaveLength(1);
     })
-
-
    
 })
