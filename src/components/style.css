@@ -56,11 +56,13 @@
 
 .fotend_middle{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    line-height: 0.2rem;
 }
 
 .fotend_middle p{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-right: 1.5rem;
 }
 

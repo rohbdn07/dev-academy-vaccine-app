@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <>
             <div className="footer_end ">
-                <div className="fotend_wrapper col-lg-10 mx-auto">
+                <div className="fotend_wrapper col-lg-11 mx-auto">
                     <div className="fotend_left">
                         <p className="text-light">2021 Dev <GiLoveInjection /> vaccine</p>
                     </div>
