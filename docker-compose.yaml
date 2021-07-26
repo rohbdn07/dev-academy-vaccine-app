@@ -1,0 +1,14 @@
+version: "3"
+services:
+    frontend-react:
+        build: .
+        ports:
+            - "3000:3000"
+        volumes: 
+            - ./src:/app/src
+        # environment:                  ' Below, environment variabls are mentioned just for documentation purpose for future use if required'
+        #     - REACT_APP_NAME=rohit    
+        #     - CHOKDIR_USEPOLLING=true
+        # env_file: 
+        #     - ./.env
+        
