@@ -4,14 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run the app either using docker-compose up or using npm start:
+In the project directory, you can run the app either using command: ./up.sh (this is shell-script which runs the command(s) given inside this script) in the project's root directory or using npm start:
 
-### `docker-compose up -d`
+### `./up.sh`
 
-Runs the app in the development mode. This single command will install all the npm dependencies (such as: npm install)
+Runs the app in the development mode. This single command: ./up.sh (which includes docker-compose up) will install all the npm dependencies (such as: npm install) and build
 so that you don't need to install yourself after cloning this repo.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  '-d' is added to run the container in detach form in the background.
-Removing '-d' from above command will also work but this time you will see the logs in your terminal.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm start`
 
@@ -21,11 +20,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `docker-compose down`
+### `./down.sh`
 
-It stops and removes the container which was created. And you will see nothing : Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is shell-script command (includes docker-compose down). It will stops and removes the container which was created. And you will see nothing on the browser: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 Again to run the container and see the result in the browser, you have to run: 
-##### `docker-compose up -d`
+##### `./up.sh`
 
 ### `npm test`
 
