@@ -8,8 +8,9 @@ In the project directory, you can run the app either using docker-compose up or 
 
 ### `docker-compose up -d`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. '-d' is added to run the container in detach form in the background.
+Runs the app in the development mode. This single command will install all the npm dependencies (such as: npm install)
+so that you don't need to install yourself after cloning this repo.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  '-d' is added to run the container in detach form in the background.
 Removing '-d' from above command will also work but this time you will see the logs in your terminal.
 
 ### `npm start`
