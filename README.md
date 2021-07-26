@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation from the given Json data(s). Web UI is done with ReactJs, and ChartJs for graphical presentation along with textual representation. React-Redux is being used for the state managements. Jest and Enzyme is being used for unit-testing on some of the components. Moreover, for the containerization, Docker is being used on the project.
 
 ## Available Scripts
 
