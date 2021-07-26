@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation from the given Json data(s). Web UI is done with ReactJs, and ChartJs for graphical presentation along with textual representation. React-Redux is being used for the state managements. Jest and Enzyme is being used for unit-testing on some of the components. Moreover, for the containerization, Docker is being used on the project.
 
+<!-- ![dev-vaccine-desktop-version](https://user-images.githubusercontent.com/57314666/127071751-3bd32b5a-39ce-42ca-8889-ddae777ac8a7.png) -->
+
+
 ## Available Scripts
 
 In the project directory, you can run the app either using command: ./up.sh (this is shell-script which runs the command(s) given inside this script) in the project's root directory or using npm start:

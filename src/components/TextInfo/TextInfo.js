@@ -21,29 +21,29 @@ export default function TextInfo(props) {
             Vaccine name:<b>{VaccineName}</b>
           </p>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            The total vaccine ordered by KYS:
+            <p>The total vaccine ordered by KYS:</p>
             <span className="badge bg-dark rounded-pill">{kysArray}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            The total vaccine ordered by HYKS:
+            <p>The total vaccine ordered by HYKS:</p>
             <span className="badge bg-success rounded-pill">{HyksArray}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            The total vaccine ordered by TYKS:
+          <p> The total vaccine ordered by TYKS:</p>
             <span className="badge bg-primary rounded-pill">{TyksArray}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            The total vaccine ordered by OYS:
+            <p>The total vaccine ordered by OYS:</p>
             <span className="badge bg-danger rounded-pill">{OysArray}</span>
           </li>
 
           <div>
             <p className="pt-3">
-              The total ordered {VaccineName} vaccine's bottles are:{" "}
+              The total ordered {VaccineName} vaccine's bottles are:
               <span class="badge fs-7 bg-info rounded-pill">{dataLength}</span>
             </p>
             <p>
-              The total received {VaccineName} vaccine's bottles are:{" "}
+              The total received {VaccineName} vaccine's bottles are:
               <span class="badge fs-7 bg-info rounded-pill">
                 {receivedVaccineArray}
               </span>

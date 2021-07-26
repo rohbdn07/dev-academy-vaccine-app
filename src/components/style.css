@@ -11,7 +11,8 @@
 }
 
 .textInfo{
-    width:28rem ;
+    width: 100%;
+    max-width: 30rem;
     
 }
 
@@ -19,8 +20,13 @@
     font-size: 0.9rem;
 }
 
-.barchart{
-    max-width: 50rem;
+/* .barchart{
+    width: 50rem;
+    height: 50rem;
+} */
+
+.date_selection{
+    display: flex;
 }
 
 .pieChart{
@@ -68,4 +74,42 @@
 
 .fotend_right{
     cursor: pointer;
+}
+
+@media (max-width: 576px) { 
+p{
+font-size: 0.8rem;
+    }
+
+.date_selection{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    }
+    
+.table{
+    font-size: 0.7rem;
+}
+
+.fotend_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .textInfo{
+    min-width: 20rem;
+    margin-bottom: 1rem;
+} */
+
+.barchart{
+    overflow-x:scroll;
+    font-size: small;
+    /* height: 15rem;
+    width: 25rem; */
+}
+
+.piechart{
+    font-size: 0.7rem;
+}
+
 }

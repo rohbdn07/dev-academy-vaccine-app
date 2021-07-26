@@ -121,7 +121,7 @@ export default function DateSelection() {
 
     return (
         <>
-        <div className="d-flex col-lg-12">
+        <div className="date_selection col-lg-12">
             <div className="col-lg-5">
                     <div className="col-6">
                             <label for="validationCustom04" className="form-label">Select a date</label>

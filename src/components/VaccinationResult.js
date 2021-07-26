@@ -69,7 +69,7 @@ const fetchVaccinationOfZerpfy = allVaccinationData.filter((allVacccinationItem)
 
     return (
         <>
-            <div className="col-10 vaccinationResult">
+            <div className="col-lg-10 vaccinationResult">
                 <VaccinationText totalVaccinationNumber={totalVaccinationNumber.length} 
                     totalFemaleTakenVaccine={totalFemaleTakenVaccine.length}
                     totalMaleTakenVaccine={totalMaleTakenVaccine.length}

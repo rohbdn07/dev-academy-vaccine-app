@@ -15,7 +15,7 @@ export default function HomePage() {
         <>
             <Navbar />
             {/* <SearchForm /> */}
-        <div className="homepage_wrapper col-lg-12">
+        <div className="homepage_wrapper">
                 <div className="homepage_header col-11 mx-auto">
                     <h3>Vaccines information:</h3>
                     <p>The given data(s) are categorized into different intresting information. 
@@ -24,26 +24,26 @@ export default function HomePage() {
                 <h6 className="col-11 mx-auto pt-3">
                     Ordered vaccines:
                 </h6>
-                <div className="hompage_result col-11 mx-auto">
+                <div className="hompage_result col-lg-11 mx-auto">
                     <AntiquaResult />
                 </div>
                 <hr />
-                <div className="hompage_result col-11 mx-auto">
+                <div className="hompage_result col-lg-11 mx-auto">
                     <SolarBuddhicaResult />
                 </div>
                 <hr />
-                <div className="hompage_result col-11 mx-auto">
+                <div className="hompage_result col-lg-11 mx-auto">
                     <ZerpfyResult />
                 </div>
                 <hr />
                 <h6 className="col-11 mx-auto pt-3">
                     Vaccination info:
                 </h6>
-                <div className="hompage_result col-11 mx-auto">
+                <div className="hompage_result col-lg-11 mx-auto">
                     <VaccinationResult/>
                 </div>
                 <hr />
-                <div className="hompage_result col-11 mx-auto">
+                <div className="hompage_result col-lg-11 mx-auto">
                     <DateSelection/>
                 </div>
                 <hr />
