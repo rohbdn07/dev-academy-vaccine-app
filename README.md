@@ -9,7 +9,8 @@ In the project directory, you can run the app either using docker-compose up or 
 ### `docker-compose up -d`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. '-d' is added to run the container in detach form in the background.
+Removing '-d' from above command will also work but this time you will see the logs in your terminal.
 
 ### `npm start`
 
@@ -18,6 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `docker-compose down`
+
+It stops and removes the container which was created. And you will see nothing : Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Again to run the container and see the result in the browser, you have to run: 
+##### `docker-compose up -d`
 
 ### `npm test`
 
