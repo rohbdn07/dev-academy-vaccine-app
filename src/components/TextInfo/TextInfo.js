@@ -57,7 +57,7 @@ export default function TextInfo(props) {
 
 TextInfo.propTypes = {
   receivedVaccineArray: PropsTypes.number,
-  VaccineName: PropsTypes.number,
+  VaccineName: PropsTypes.string,
   kysArray: PropsTypes.number,
   HyksArray: PropsTypes.number,
   TyksArray: PropsTypes.number,

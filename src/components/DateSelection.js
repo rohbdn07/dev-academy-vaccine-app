@@ -62,7 +62,7 @@ export default function DateSelection() {
             if (allVacccinationItem.sourceBottle === antiuqeVaccineItem.id) {
                 const selectedDate = moment(startDate).format("YYYY-MM-DD")
                 const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                   return selectedDate === getVaccinationDate;
+                return selectedDate === getVaccinationDate;
 
             }
         })
@@ -73,7 +73,7 @@ export default function DateSelection() {
             if (allVacccinationItem.sourceBottle === solarVaccineItem.id) {
                 const selectedDate = moment(startDate).format("YYYY-MM-DD")
                 const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                   return selectedDate === getVaccinationDate;
+                return selectedDate === getVaccinationDate;
 
             }
         })
@@ -84,7 +84,7 @@ export default function DateSelection() {
             if (allVacccinationItem.sourceBottle === zerpfyVaccineItem.id) {
                 const selectedDate = moment(startDate).format("YYYY-MM-DD")
                 const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                   return selectedDate === getVaccinationDate;
+                return selectedDate === getVaccinationDate;
 
             }
         })
@@ -194,11 +194,10 @@ export default function DateSelection() {
                         fetchVaccinationDateOfAntique={fetchVaccinationDateOfAntique.length} 
                         fetchVaccinationDateOfSolarBuddhica={fetchVaccinationDateOfSolarBuddhica.length}
                         fetchVaccinationDateOfZerpfy={fetchVaccinationDateOfZerpfy.length}
-                     />
+                    />
             </div>
             : null}
         </div>
-           
         </>
     )
 }

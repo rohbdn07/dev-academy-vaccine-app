@@ -1,3 +1,8 @@
+.navbar_bg{
+    background-color: rgba(10, 53, 98, 1);
+    /* background-color: #2596be; */
+}
+
 .vaccinationResult{
     display: flex;
     align-items: center;
@@ -22,5 +27,43 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-   
+}
+
+.footer_end{
+    /* width: 100%; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    background-color: rgba(10, 53, 98, 1);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    color: white;
+}
+.footer_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer_end{
+    width: 100%;
+}
+.fotend_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fotend_middle{
+    display: flex;
+    align-items: center;
+}
+
+.fotend_middle p{
+    font-size: 0.9rem;
+    margin-right: 1.5rem;
+}
+
+.fotend_right{
+    cursor: pointer;
 }

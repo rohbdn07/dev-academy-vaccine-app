@@ -8,13 +8,14 @@ import SolarBuddhicaResult from '../components/SolarBuddhicaResult';
 import ZerpfyResult from '../components/ZerpfyResult';
 import VaccinationResult from '../components/VaccinationResult';
 import DateSelection from '../components/DateSelection';
+import Footer from '../components/footer/Footer';
 
 export default function HomePage() {
     return (
         <>
             <Navbar />
             {/* <SearchForm /> */}
-           <div className="homepage_wrapper col-lg-12">
+        <div className="homepage_wrapper col-lg-12">
                 <div className="homepage_header col-11 mx-auto">
                     <h3>Vaccines information:</h3>
                     <p>The given data(s) are categorized into different intresting information. 
@@ -46,7 +47,8 @@ export default function HomePage() {
                     <DateSelection/>
                 </div>
                 <hr />
-           </div>
+                    <Footer />
+        </div>
         </>
     )
 }

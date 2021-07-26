@@ -7,19 +7,18 @@ export default function PieChartAtSelectedDate (props) {
     const {fetchVaccinationDateOfAntique,
         fetchVaccinationDateOfSolarBuddhica,
         fetchVaccinationDateOfZerpfy
-       } = props;
+      } = props;
 
     const selectedDateData = [
         { name: 'Antiqua',
-         value: fetchVaccinationDateOfAntique },
+        value: fetchVaccinationDateOfAntique },
         { name: 'SolarBuddhhica', 
         value: fetchVaccinationDateOfSolarBuddhica },
         { name: 'Zerpfy', 
         value: fetchVaccinationDateOfZerpfy },
-       
       ];
+
       const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
-      
       const RADIAN = Math.PI / 180;
       const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
         const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -58,7 +57,6 @@ export default function PieChartAtSelectedDate (props) {
 
             </div>
           </div>
-           
         </>
     );
   
