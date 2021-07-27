@@ -166,23 +166,23 @@ export default function DateSelection() {
                         <ul className="list-group">
                             <p>Information of vaccines exact at the selected date:</p>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
-                            no. of Antiqua vaccine given:
+                            <p>no. of Antiqua vaccine given:</p>
                                 <span className="badge bg-primary rounded-pill">{fetchVaccinationDateOfAntique.length}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
-                            no. of SolarBuddhica vaccine given:
+                            <p>no. of SolarBuddhica vaccine given:</p>
                                 <span className="badge bg-success rounded-pill">{fetchVaccinationDateOfSolarBuddhica.length}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
-                            no. of Zerpfy vaccine given:
+                            <p>no. of Zerpfy vaccine given:</p>
                                 <span className="badge bg-warning rounded-pill">{fetchVaccinationDateOfZerpfy.length}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
-                            total no. of vaccines given:
+                            <p>total no. of vaccines given:</p>
                                 <span className="badge bg-dark rounded-pill">{fetchTotalVaccinesGivenatSelectedDate.length}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
-                            no. of arrived vaccine's bottles:
+                            <p>no. of arrived vaccine's bottles:</p>
                                 <span className="badge bg-info rounded-pill">{totalOrderedBottlesOnselectedDate}</span>
                             </li>   
                         </ul>
