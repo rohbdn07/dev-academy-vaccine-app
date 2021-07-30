@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchForm from '../components/SearchForm';
 import Navbar from '../components/Navbar';
 import AntiquaResult from '../components/AntiquaResult/AntiquaResult';
 import BarChart_producers from '../components/BarChart_producers';
@@ -14,7 +13,6 @@ export default function HomePage() {
     return (
         <>
             <Navbar />
-            {/* <SearchForm /> */}
         <div className="homepage_wrapper">
                 <div className="homepage_header col-11 mx-auto">
                     <h3>Vaccines information:</h3>
