@@ -8,3 +8,5 @@ const Store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(thunk))
   );
+
+export default Store;

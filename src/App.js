@@ -7,11 +7,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { store } from './Redux/store';
+import Store  from './Redux/store';
 
 function App() {
   return (
-   <Provider store={store}>
+   <Provider store={Store}>
       <Router>
        <div className="App">
             <HomePage />
