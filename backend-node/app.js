@@ -35,5 +35,9 @@ app.get('/', (req,res) => {
     res.send('I am coding late night, feeling sleepy')
 })
 
+app.get('/antique-data', (req,res) => {
+    res.send('this is antique data page')
+})
+
 
 module.exports = app;
