@@ -1,0 +1,21 @@
+{
+  "name": "dev-vaccine",
+  "version": "1.0.0",
+  "description": "creating a simple webpage to display interesting data into beautiful UI with graphs and textual form.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs-react"
+  ],
+  "author": "Rohit Bhandari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
