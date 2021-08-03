@@ -43,9 +43,9 @@ const VaccineSchema = new Schema(
 //if you want to get existed data from mongodb, 
 // use collection name inside model as written here.
 
-const AllVaccineData = mongoose.model("allvaccinedata", VaccineSchema);   
+const AllVaccineCompanyData = mongoose.model("allvaccinedata", VaccineSchema);   
 
 
 
-module.exports = AllVaccineData;
+module.exports = AllVaccineCompanyData;
 

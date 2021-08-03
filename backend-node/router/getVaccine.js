@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const AllVaccineData = require('../model/vaccine-schema')
+const AllVaccineCompanyData = require('../model/vaccine-schema')
 
 
 router.get('/', async(req,res) => {
     try {
-        const receivedalldata = await AllVaccineData.find({});
+        const receivedalldata = await AllVaccineCompanyData.find({});
 
         // console.log('the data are', res.json(antqueData))
         res.status(200).send(receivedalldata);
