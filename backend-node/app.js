@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mangoose= require('mongoose');
+const path = require('path');
+const getvaccineRouter = require('./router/getVaccine');
 
 
 const app = express();
@@ -24,20 +26,18 @@ mangoose.connect( dbURI, {
   console.log('  Press CTRL-C to stop\n');
 
 
-  // parse json request body
+// parse json request body
 app.use(express.json());
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));
 // enable cors
 app.use(cors());
 
-app.get('/', (req,res) => {
-    res.send('I am coding late night, feeling sleepy')
-})
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/antique-data', (req,res) => {
-    res.send('this is antique data page')
-})
+//get data from db
+app.use('/', getvaccineRouter)
+
 
 
 module.exports = app;
