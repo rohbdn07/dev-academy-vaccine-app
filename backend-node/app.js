@@ -14,7 +14,7 @@ mangoose.connect( dbURI, {
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() => console.log("connected to db"))
+  .then(() => console.log("connected to mongo-db"))
   .catch((err) => console.log("there is an error", err));
 
 
