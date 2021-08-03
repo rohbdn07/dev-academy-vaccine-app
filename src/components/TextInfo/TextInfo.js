@@ -10,6 +10,7 @@ export default function TextInfo(props) {
     HyksArray,
     TyksArray,
     OysArray,
+    TaysArray,
     dataLength,
   } = props;
 
@@ -35,6 +36,10 @@ export default function TextInfo(props) {
           <li className="list-group-item d-flex justify-content-between align-items-center">
             <p>The total vaccine ordered by OYS:</p>
             <span className="badge bg-danger rounded-pill">{OysArray}</span>
+          </li>
+          <li className="list-group-item d-flex justify-content-between align-items-center">
+            <p>The total vaccine ordered by TAYS:</p>
+            <span className="badge bg-warning rounded-pill">{TaysArray}</span>
           </li>
 
           <div>

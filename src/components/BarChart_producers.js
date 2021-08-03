@@ -4,7 +4,7 @@ import './style.css';
 
 export default function BarChart_producers(props) {
 
-  const {kysArray, HyksArray, TyksArray, OysArray} = props;
+  const {kysArray, HyksArray, TyksArray, OysArray, TaysArray} = props;
 
   const data = [
         {
@@ -22,6 +22,10 @@ export default function BarChart_producers(props) {
         {
           "name": "OYS",
           "OYS": OysArray
+        },
+        {
+          "name": "TAYS",
+          "TAYS": TaysArray
         }
       ]
 
@@ -38,6 +42,7 @@ export default function BarChart_producers(props) {
                       <Bar dataKey="HYKS" fill="#82ca9d" />
                       <Bar dataKey="TYKS" fill="#1976d2" />
                       <Bar dataKey="OYS" fill="#A00000" />
+                      <Bar dataKey="TAYS" fill="#ffbf00" />
                   </BarChart>      
           </div>
         </>

@@ -13,6 +13,7 @@ export default function AntiquaResult() {
   let HyksArray = [];
   let TyksArray = [];
   let OysArray = [];
+  let TaysArray = [];
   let receivedVaccineArray = [];
   let VaccineName = "";
 
@@ -42,7 +43,11 @@ export default function AntiquaResult() {
       } else if (item.healthCareDistrict === "TYKS") {
         count += 1;
         TyksArray.push(`${count},`);
-      } else {
+      } else if (item.healthCareDistrict === "TAYS") {
+        count += 1;
+        TaysArray.push(`${count},`);
+      } 
+      else {
         count += 1;
         OysArray.push(`${count},`);
       }
@@ -73,12 +78,14 @@ export default function AntiquaResult() {
           HyksArray={HyksArray.length}
           TyksArray={TyksArray.length}
           OysArray={OysArray.length}
+          TaysArray={TaysArray.length}
         />
         <BarChart_producers
           kysArray={kysArray.length}
           HyksArray={HyksArray.length}
           TyksArray={TyksArray.length}
           OysArray={OysArray.length}
+          TaysArray={TaysArray.length}
         />
       </div>
     </>
