@@ -1,36 +1,45 @@
-import { GET_DATA, GET_SOLARBUDDHICA_DATA, GET_ZERPFY_DATA, VACCINATION_DONE } from '../Constants/action-types';
+import { VACCINEDATA_TO_GET_LOADING , VACCINEDATA_GET_SUCCESS,  VACCINEDATA_GET_FAILURE , VACCINATION_DONE } from '../Constants/action-types';
 
 const initalstate = {
-    allAntiquaData : [],
-    allSolarBuddhicaData : [],
-    allZerpfyData : [],
-    allVaccinationData : []
+    // allAntiquaData : [],
+    // allSolarBuddhicaData : [],
+    // allZerpfyData : [],
+    // allVaccinationData : [],
+
+    loading: false,
+    vaccineData:[],
+    errMessage:''
+
 }
 
 export default function dataReducer(state = initalstate, action ) {
    switch (action.type) {
-       case GET_DATA:
+       case VACCINEDATA_TO_GET_LOADING :
            return {
                ...state,
-               allAntiquaData : action.payload
+               loading: true,
+              errMessage:''
            }
 
-        case GET_SOLARBUDDHICA_DATA:
+        case VACCINEDATA_GET_SUCCESS:
             return {
                 ...state,
-                allSolarBuddhicaData : action.payload
+               loading: false,
+               vaccineData: action.payload
             }
         
-        case GET_ZERPFY_DATA:
+        case  VACCINEDATA_GET_FAILURE :
             return {
                 ...state,
-                allZerpfyData : action.payload
+               loading: false,
+               vaccineData:[],
+               errMessage: 'Unable to get data from server'
             }
             
         case VACCINATION_DONE:
                 return {
                     ...state,
-                    allVaccinationData : action.payload
+
                 }
        default:
            return state

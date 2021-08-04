@@ -1,91 +1,91 @@
-import React, {useEffect} from 'react';
-import { zerpfy }  from '../data/zerpfy';
-import {useDispatch, useSelector} from 'react-redux'
-import {getSolarBuddhicaAction, getZerpfyAction} from '../Redux/Action/getData-action';
-import BarChart_producers from './BarChart_producers';
-import TextInfo from './TextInfo/TextInfo';
+// import React, {useEffect} from 'react';
+// import { zerpfy }  from '../data/zerpfy';
+// import {useDispatch, useSelector} from 'react-redux'
+// import {getSolarBuddhicaAction, getZerpfyAction} from '../Redux/Action/getData-action';
+// import BarChart_producers from './BarChart_producers';
+// import TextInfo from './TextInfo/TextInfo';
 
-export default function ZerpfyResult() {
-    const dispatch = useDispatch();
-    const {allZerpfyData} = useSelector(state => state.dataReducer)
-    let count = 0
-    let kysArray = []
-    let HyksArray = []
-    let TyksArray = []
-    let OysArray = []
-    let TaysArray = []
-    let receivedVaccineArray = []
-    let VaccineName = ''
+// export default function ZerpfyResult() {
+//     const dispatch = useDispatch();
+//     const {allZerpfyData} = useSelector(state => state.dataReducer)
+//     let count = 0
+//     let kysArray = []
+//     let HyksArray = []
+//     let TyksArray = []
+//     let OysArray = []
+//     let TaysArray = []
+//     let receivedVaccineArray = []
+//     let VaccineName = ''
 
 
-    useEffect(() => {
-       try {
-        fetchData(zerpfy)
-       } catch (error) {
-           console.log('there is an error fetching the data', error)
-       }
-    }, [])
+//     useEffect(() => {
+//        try {
+//         fetchData(zerpfy)
+//        } catch (error) {
+//            console.log('there is an error fetching the data', error)
+//        }
+//     }, [])
 
-    const fetchData = (zerpfy) => {
-        dispatch(getZerpfyAction(zerpfy))
+//     const fetchData = (zerpfy) => {
+//         dispatch(getZerpfyAction(zerpfy))
         
-    }
+//     }
 
-    const fetchOrderedData = () =>  {
-        return allZerpfyData.map((item, index)=> {
-        if(item.vaccine === 'Zerpfy') {
-            VaccineName = 'Zerpfy'
-        }
-        if(item.healthCareDistrict === 'KYS') {
-           count += 1;
-           kysArray.push(`${count},`)
-        } else if (item.healthCareDistrict === 'HYKS') {
-            count += 1;
-            HyksArray.push(`${count},`)
-        } else if (item.healthCareDistrict === 'TYKS'){
-            count += 1;
-            TyksArray.push(`${count},`)
-        } else if (item.healthCareDistrict === "TAYS") {
-            count += 1;
-            TaysArray.push(`${count},`);
-        } 
-        else {
-            count += 1;
-            OysArray.push(`${count},`)
-        }
-    })}
-    fetchOrderedData()
+//     const fetchOrderedData = () =>  {
+//         return allZerpfyData.map((item, index)=> {
+//         if(item.vaccine === 'Zerpfy') {
+//             VaccineName = 'Zerpfy'
+//         }
+//         if(item.healthCareDistrict === 'KYS') {
+//            count += 1;
+//            kysArray.push(`${count},`)
+//         } else if (item.healthCareDistrict === 'HYKS') {
+//             count += 1;
+//             HyksArray.push(`${count},`)
+//         } else if (item.healthCareDistrict === 'TYKS'){
+//             count += 1;
+//             TyksArray.push(`${count},`)
+//         } else if (item.healthCareDistrict === "TAYS") {
+//             count += 1;
+//             TaysArray.push(`${count},`);
+//         } 
+//         else {
+//             count += 1;
+//             OysArray.push(`${count},`)
+//         }
+//     })}
+//     fetchOrderedData()
 
-    const fetchReceivedVaccine = () => {
-        allZerpfyData.map((item)=> {
-           const getDate = item.arrived;
-           const nowDate = Date();
-           if (nowDate >= getDate) {
-               count += 1;
-               receivedVaccineArray.push(`${count},`);
-           }
-       })
-   }
-   fetchReceivedVaccine()
+//     const fetchReceivedVaccine = () => {
+//         allZerpfyData.map((item)=> {
+//            const getDate = item.arrived;
+//            const nowDate = Date();
+//            if (nowDate >= getDate) {
+//                count += 1;
+//                receivedVaccineArray.push(`${count},`);
+//            }
+//        })
+//    }
+//    fetchReceivedVaccine()
 
-    return (
-        <>
-            <div className="col-12 vaccinationResult">
-                <TextInfo receivedVaccineArray={receivedVaccineArray.length} 
-                dataLength={allZerpfyData.length} 
-                VaccineName={VaccineName} 
-                kysArray={kysArray.length} 
-                HyksArray={HyksArray.length} 
-                TyksArray={TyksArray.length} 
-                OysArray={OysArray.length}
-                TaysArray={TaysArray.length}/>
+//     return (
+//         <>
+//             <div className="col-12 vaccinationResult">
+//                 <TextInfo receivedVaccineArray={receivedVaccineArray.length} 
+//                 dataLength={allZerpfyData.length} 
+//                 VaccineName={VaccineName} 
+//                 kysArray={kysArray.length} 
+//                 HyksArray={HyksArray.length} 
+//                 TyksArray={TyksArray.length} 
+//                 OysArray={OysArray.length}
+//                 TaysArray={TaysArray.length}/>
 
-                <BarChart_producers kysArray={kysArray.length} 
-                HyksArray={HyksArray.length} 
-                TyksArray={TyksArray.length} 
-                OysArray={OysArray.length}
-                TaysArray={TaysArray.length}/>
-            </div>
-        </>
-    )
-}
+//                 <BarChart_producers kysArray={kysArray.length} 
+//                 HyksArray={HyksArray.length} 
+//                 TyksArray={TyksArray.length} 
+//                 OysArray={OysArray.length}
+//                 TaysArray={TaysArray.length}/>
+//             </div>
+//         </>
+//     )
+// }

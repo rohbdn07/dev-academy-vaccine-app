@@ -45,12 +45,12 @@ export default function TextInfo(props) {
           <div>
             <p className="pt-3">
               The total ordered {VaccineName} vaccine's bottles are:
-              <span class="badge fs-7 bg-info rounded-pill">{dataLength}</span>
+              <span class="badge fs-7 bg-info rounded-pill mx-2">{dataLength}</span>
             </p>
             <p>
               The total received {VaccineName} vaccine's bottles are:
-              <span class="badge fs-7 bg-info rounded-pill">
-                {receivedVaccineArray}
+              <span class="badge fs-7 bg-info rounded-pill mx-2">
+                {dataLength}
               </span>
             </p>
           </div>
