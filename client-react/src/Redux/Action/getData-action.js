@@ -19,6 +19,7 @@ export const getDataAction = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: VACCINEDATA_GET_FAILURE,
+      payload: error.message
     });
     console.log("there is an error", error);
   }

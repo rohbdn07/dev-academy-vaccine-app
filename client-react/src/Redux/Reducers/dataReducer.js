@@ -34,7 +34,7 @@ export default function dataReducer(state = initalstate, action) {
         ...state,
         loading: false,
         vaccineData: [],
-        errMessage: "Unable to get data from server",
+        errMessage: action.payload,
       };
 
     case VACCINATION_DONE:
