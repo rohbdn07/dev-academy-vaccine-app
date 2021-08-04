@@ -8,6 +8,7 @@ const initalstate = {
 
     loading: false,
     vaccineData:[],
+    vaccinationDoneData: [],
     errMessage:''
 
 }
@@ -25,7 +26,8 @@ export default function dataReducer(state = initalstate, action ) {
             return {
                 ...state,
                loading: false,
-               vaccineData: action.payload
+               vaccineData: action.payloadOne,
+               vaccinationDoneData: action.payloadTwo
             }
         
         case  VACCINEDATA_GET_FAILURE :

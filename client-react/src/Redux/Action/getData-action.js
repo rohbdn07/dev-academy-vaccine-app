@@ -14,7 +14,8 @@ export const getDataAction = () => async (dispatch) => {
     const { data } = await axiosInstance.get("/");
     dispatch({
       type: VACCINEDATA_GET_SUCCESS,
-      payload: data.allCompanyVaccineData,
+      payloadOne: data.allCompanyVaccineData,
+      payloadTwo: data.allVaccinationDoneData,
     });
   } catch (error) {
     dispatch({
