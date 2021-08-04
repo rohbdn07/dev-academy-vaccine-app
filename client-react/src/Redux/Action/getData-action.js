@@ -2,7 +2,6 @@ import {
   VACCINEDATA_TO_GET_LOADING,
   VACCINEDATA_GET_SUCCESS,
   VACCINEDATA_GET_FAILURE,
-  VACCINATION_DONE,
 } from "../Constants/action-types";
 import axiosInstance from "../../services/axios";
 

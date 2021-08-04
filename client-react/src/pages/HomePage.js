@@ -223,11 +223,11 @@ export default function HomePage() {
           </div>
           <hr />
           <h6 className="col-11 mx-auto pt-3">Vaccination info:</h6>
-          {/* <div className="hompage_result col-lg-11 mx-auto">
+          <div className="hompage_result col-lg-11 mx-auto">
             <VaccinationResult />
           </div>
           <hr />
-          <div className="hompage_result col-lg-11 mx-auto">
+          {/* <div className="hompage_result col-lg-11 mx-auto">
             <DateSelection />
           </div> */}
           <hr />
