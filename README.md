@@ -3,7 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation from the given Json data(s). Web UI is done with ReactJs, and ChartJs for graphical presentation along with textual representation. React-Redux is being used for the state managements. Jest and Enzyme is being used for unit-testing on some of the components. Moreover, for the containerization, Docker is being used on the project.
 
 Desktop:
-![dev-vaccine-desktop-version](https://user-images.githubusercontent.com/57314666/127071751-3bd32b5a-39ce-42ca-8889-ddae777ac8a7.png)
+![latestDev-vaccine-app-screenshot](https://user-images.githubusercontent.com/57314666/128255627-1fa924f4-d2d8-435d-a17c-8825ead409ac.png)
+
 
 Mobile:
 ![dev-vaccine-mobile-version](https://user-images.githubusercontent.com/57314666/127075510-7761751f-7c2c-4942-9a14-0ba7bd513acb.png)
