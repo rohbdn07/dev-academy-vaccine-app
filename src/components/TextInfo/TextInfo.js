@@ -30,7 +30,7 @@ export default function TextInfo(props) {
             <span className="badge bg-success rounded-pill">{HyksArray}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-          <p> The total vaccine ordered by TYKS:</p>
+            <p> The total vaccine ordered by TYKS:</p>
             <span className="badge bg-primary rounded-pill">{TyksArray}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">

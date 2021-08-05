@@ -46,8 +46,7 @@ export default function AntiquaResult() {
       } else if (item.healthCareDistrict === "TAYS") {
         count += 1;
         TaysArray.push(`${count},`);
-      } 
-      else {
+      } else {
         count += 1;
         OysArray.push(`${count},`);
       }
