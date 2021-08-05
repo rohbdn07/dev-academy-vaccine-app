@@ -1,0 +1,15 @@
+{
+    "name": "dev-vaccine",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+     "concurrently":"6.2.0"
+    },
+    "scripts": {
+        "server": "cd backend-node && npm start",
+        "client": "cd client-react && npm start",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    }
+    
+  }
+  
