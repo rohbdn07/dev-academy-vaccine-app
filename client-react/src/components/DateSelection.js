@@ -1,203 +1,214 @@
-import React, {useState} from 'react';
-import moment from 'moment';
+import React, { useState } from "react";
+import moment from "moment";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {useSelector} from 'react-redux';
-import PieChartAtSelectedDate from './PieChart-SelecedDate';
-
-
+import { useSelector } from "react-redux";
+import PieChartAtSelectedDate from "./PieChart-SelecedDate";
 
 export default function DateSelection() {
-    const [startDate, setStartDate] = useState(new Date());
-    const { allVaccinationData, allAntiquaData, allSolarBuddhicaData, allZerpfyData } = useSelector(state => state.dataReducer);
-    let antiquaExpiredBottle = 0;
-    let solarBuddhicaExpiredBottle = 0;
-    let ZerpfyExpiredBottle = 0;
+  const [startDate, setStartDate] = useState(new Date());
+  const { vaccineData, vaccinationDoneData } = useSelector(
+    (state) => state.dataReducer
+  );
 
-    const getInfoOnSelectedDateOfAntiuqe = () => {
-        return allAntiquaData.map((item)=> {
-            const selectedDate = moment(startDate).format("YYYY-MM-DD")
-            const getArrivedDate = item.arrived;
-            const expireDate = moment(getArrivedDate).add(30, "days").format("YYYY-MM-DD");
+  const getInfoOnSelectedDateOfAllVaccines = (vaccineName) => {
+    return vaccineData.filter((item) => {
+      const selectedDate = moment(startDate).format("YYYY-MM-DD");
+      const getArrivedDate = item.arrived;
+      const expireDate = moment(getArrivedDate)
+        .add(30, "days")
+        .format("YYYY-MM-DD");
 
-        if(expireDate <= selectedDate) {
-            antiquaExpiredBottle += 1
+      if (item.vaccine === vaccineName) {
+        return expireDate <= selectedDate;
+      }
+    });
+  };
+
+  const expiredBottleOfAntiqua = getInfoOnSelectedDateOfAllVaccines("Antiqua");
+  const expiredBottleOfsolarBuddhica =
+    getInfoOnSelectedDateOfAllVaccines("SolarBuddhica");
+  const expiredBottleOfZerpfy = getInfoOnSelectedDateOfAllVaccines("Zerpfy");
+
+  const fetchVaccinationUntilSelectedDate = (vaccineName) => {
+    return vaccinationDoneData.filter((vaccinationDoneItem) => {
+      return vaccineData.some((someItem) => {
+        if (someItem.vaccine === vaccineName) {
+          if (vaccinationDoneItem.sourceBottle === someItem.id) {
+            const selectedDate = moment(startDate).format("YYYY-MM-DD");
+            const getVaccinationDate = moment(
+              vaccinationDoneItem.vaccinationDate
+            ).format("YYYY-MM-DD");
+            return getVaccinationDate <= selectedDate;
+          }
         }
-    
-        })
-    }
+      });
+    });
+  };
 
-    getInfoOnSelectedDateOfAntiuqe();
+  const totalAntiqueVaccineGivenUntilSelectedDate =
+    fetchVaccinationUntilSelectedDate("Antiqua");
+  const totalSolarVaccineGivenUntilSelectedDate =
+    fetchVaccinationUntilSelectedDate("SolarBuddhica");
+  const totalZerpfyVaccineGivenUntilSelectedDate =
+    fetchVaccinationUntilSelectedDate("Zerpfy");
 
-    const getInfoOnSelectedDateOfSolarBuddhica = () => {
-        return allSolarBuddhicaData.map((item)=> {
-            const selectedDate = moment(startDate).format("YYYY-MM-DD")
-            const getArrivedDate = item.arrived;
-            const expireDate = moment(getArrivedDate).add(30, "days").format("YYYY-MM-DD");
-
-        if(expireDate <= selectedDate) {
-            solarBuddhicaExpiredBottle += 1
+  const fetchVaccinationOnSelectedDate = (vaccineName) => {
+    return vaccinationDoneData.filter((vaccinationDoneItem) => {
+      return vaccineData.some((someItem) => {
+        if (someItem.vaccine === vaccineName) {
+          if (vaccinationDoneItem.sourceBottle === someItem.id) {
+            const selectedDate = moment(startDate).format("YYYY-MM-DD");
+            const getVaccinationDate = moment(
+              vaccinationDoneItem.vaccinationDate
+            ).format("YYYY-MM-DD");
+            return selectedDate === getVaccinationDate;
+          }
         }
-    
-        })
+      });
+    });
+  };
+
+  const antiquaVaccineOnSelectedDate =
+    fetchVaccinationOnSelectedDate("Antiqua");
+  const solarVaccineOnSelectedDate =
+    fetchVaccinationOnSelectedDate("SolarBuddhica");
+  const zerpfyVaccineOnSelectedDate = fetchVaccinationOnSelectedDate("Zerpfy");
+
+  const fetchTotalVaccinesGivenatSelectedDate = vaccinationDoneData.filter(
+    (item) => {
+      const selectedDate = moment(startDate).format("YYYY-MM-DD");
+      const getArrivedDate = moment(item.vaccinationDate).format("YYYY-MM-DD");
+      return selectedDate === getArrivedDate;
     }
-    getInfoOnSelectedDateOfSolarBuddhica();
+  );
 
-    const getInfoOnSelectedDateOfZerpfy = () => {
-        return allZerpfyData.map((item)=> {
-            const selectedDate = moment(startDate).format("YYYY-MM-DD")
-            const getArrivedDate = item.arrived;
-            const expireDate = moment(getArrivedDate).add(30, "days").format("YYYY-MM-DD");
-
-        if(expireDate <= selectedDate) {
-            ZerpfyExpiredBottle += 1
-        }
-    
-        })
-    }
-    getInfoOnSelectedDateOfZerpfy();
-
-    const fetchVaccinationDateOfAntique = allVaccinationData.filter((allVacccinationItem)=> {
-        return allAntiquaData.some((antiuqeVaccineItem)=> {
-            if (allVacccinationItem.sourceBottle === antiuqeVaccineItem.id) {
-                const selectedDate = moment(startDate).format("YYYY-MM-DD")
-                const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                return selectedDate === getVaccinationDate;
-
-            }
-        })
-    })
-
-    const fetchVaccinationDateOfSolarBuddhica = allVaccinationData.filter((allVacccinationItem)=> {
-        return allSolarBuddhicaData.some((solarVaccineItem)=> {
-            if (allVacccinationItem.sourceBottle === solarVaccineItem.id) {
-                const selectedDate = moment(startDate).format("YYYY-MM-DD")
-                const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                return selectedDate === getVaccinationDate;
-
-            }
-        })
-    })
-
-    const fetchVaccinationDateOfZerpfy = allVaccinationData.filter((allVacccinationItem)=> {
-        return allZerpfyData.some((zerpfyVaccineItem)=> {
-            if (allVacccinationItem.sourceBottle === zerpfyVaccineItem.id) {
-                const selectedDate = moment(startDate).format("YYYY-MM-DD")
-                const getVaccinationDate = moment(allVacccinationItem.vaccinationDate).format("YYYY-MM-DD");
-                return selectedDate === getVaccinationDate;
-
-            }
-        })
-    })
-
-    const fetchTotalVaccinesGivenatSelectedDate = allVaccinationData.filter((item)=> {
-        const selectedDate = moment(startDate).format("YYYY-MM-DD")
-        const getArrivedDate = moment(item.vaccinationDate).format("YYYY-MM-DD");
-        return selectedDate === getArrivedDate;
-    })
-
-    const fetchArrivedOrderOfAntiuqa = allAntiquaData.filter((item)=> {
-        const selectedDate = moment(startDate).format("YYYY-MM-DD")
+  const fetchArrivedOrderOfAllVaccines = (vaccineName) => {
+    return vaccineData.filter((item) => {
+      if (item.vaccine === vaccineName) {
+        const selectedDate = moment(startDate).format("YYYY-MM-DD");
         const getArrivedDate = moment(item.arrived).format("YYYY-MM-DD");
         return selectedDate === getArrivedDate;
-    })
+      }
+    });
+  };
 
-    const fetchArrivedOrderOfSolar = allSolarBuddhicaData.filter((item)=> {
-        const selectedDate = moment(startDate).format("YYYY-MM-DD")
-        const getArrivedDate = moment(item.arrived).format("YYYY-MM-DD");
-        return selectedDate === getArrivedDate;
-    })
+  const fetchArrivedOrderOfAntiqua = fetchArrivedOrderOfAllVaccines("Antiqua");
 
-    const fetchArrivedOrderOfZerpfy = allZerpfyData.filter((item)=> {
-        const selectedDate = moment(startDate).format("YYYY-MM-DD")
-        const getArrivedDate = moment(item.arrived).format("YYYY-MM-DD");
-        return selectedDate === getArrivedDate;
-    })
+  const fetchArrivedOrderOfSolar =
+    fetchArrivedOrderOfAllVaccines("SolarBuddhica");
 
+  const fetchArrivedOrderOfZerpfy = fetchArrivedOrderOfAllVaccines("Zerpfy");
 
-    const totalOrderedBottlesOnselectedDate = fetchArrivedOrderOfAntiuqa.length + fetchArrivedOrderOfSolar.length + fetchArrivedOrderOfZerpfy.length;
+  const totalOrderedBottlesOnselectedDate =
+    fetchArrivedOrderOfAntiqua.length +
+    fetchArrivedOrderOfSolar.length +
+    fetchArrivedOrderOfZerpfy.length;
 
+  return (
+    <>
+      <div className="date_selection col-lg-12">
+        <div className="col-lg-5 col-sm-11">
+          <div className="col-lg-12 col-sm-12">
+            <label for="validationCustom04" className="form-label">
+              Select a date
+            </label>
+            <br />
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              dateFormat="yyyy-MM-dd"
+            />
+          </div>
+          <p>Information of vaccines until the selected data:</p>
 
+          <table className="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#Producers</th>
+                <th scope="col">Injt.amt/bottle</th>
+                <th scope="col">Total vaccines</th>
+                <th scope="col">Expired bottles</th>
+                <th scope="col">Expired vaccines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="table-primary">
+                <th scope="row">Antique</th>
+                <td>4</td>
+                <td>{totalAntiqueVaccineGivenUntilSelectedDate.length}</td>
+                <td>{expiredBottleOfAntiqua.length}</td>
+                <td>{expiredBottleOfAntiqua.length * 4}</td>
+              </tr>
+              <tr className="table-success">
+                <th scope="row">SolarBuddhica</th>
+                <td>6</td>
+                <td>{totalSolarVaccineGivenUntilSelectedDate.length}</td>
+                <td>{expiredBottleOfsolarBuddhica.length}</td>
+                <td>{expiredBottleOfsolarBuddhica.length * 6}</td>
+              </tr>
+              <tr className="table-warning">
+                <th scope="row">Zerpfy</th>
+                <td>5</td>
+                <td>{totalZerpfyVaccineGivenUntilSelectedDate.length}</td>
+                <td>{expiredBottleOfZerpfy.length}</td>
+                <td>{expiredBottleOfZerpfy.length * 5}</td>
+              </tr>
+            </tbody>
+            <p>Each bottle(s) expire after 30 days of arrival.</p>
+          </table>
 
-    return (
-        <>
-        <div className="date_selection col-lg-12">
-            <div className="col-lg-5">
-                    <div className="col-6">
-                            <label for="validationCustom04" className="form-label">Select a date</label>
-                            <br />
-                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
-                            dateFormat="yyyy-MM-dd"/>
-                    </div>
-
-                    <table className="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                            <th scope="col">#Producers</th>
-                            <th scope="col">Injt.amt/bottle</th>
-                            <th scope="col">Expired bottles</th>
-                            <th scope="col">Expired vaccines</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="table-primary">
-                            <th scope="row">Antique</th>
-                            <td>4</td>
-                            <td>{antiquaExpiredBottle}</td>
-                            <td>{antiquaExpiredBottle * 4}</td>
-                            </tr>
-                            <tr className="table-success">
-                            <th scope="row">SolarBuddhica</th>
-                            <td>6</td>
-                            <td>{solarBuddhicaExpiredBottle}</td>
-                            <td>{solarBuddhicaExpiredBottle * 6}</td>
-                            </tr>
-                            <tr className="table-warning">
-                            <th scope="row">Zerpfy</th>
-                            <td>5</td>
-                            <td>{ZerpfyExpiredBottle}</td>
-                            <td>{ZerpfyExpiredBottle * 5}</td>
-                            </tr>
-                        </tbody>
-                        <p>Each bottle(s) expire after 30 days of arrival.</p>
-                    </table>
-
-                    <div className="textInfo">     
-                        <ul className="list-group">
-                            <p>Information of vaccines exact at the selected date:</p>
-                            <li className="list-group-item d-flex justify-content-between align-items-center">
-                            <p>no. of Antiqua vaccine given:</p>
-                                <span className="badge bg-primary rounded-pill">{fetchVaccinationDateOfAntique.length}</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center">
-                            <p>no. of SolarBuddhica vaccine given:</p>
-                                <span className="badge bg-success rounded-pill">{fetchVaccinationDateOfSolarBuddhica.length}</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center">
-                            <p>no. of Zerpfy vaccine given:</p>
-                                <span className="badge bg-warning rounded-pill">{fetchVaccinationDateOfZerpfy.length}</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center">
-                            <p>total no. of vaccines given:</p>
-                                <span className="badge bg-dark rounded-pill">{fetchTotalVaccinesGivenatSelectedDate.length}</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center">
-                            <p>no. of arrived vaccine's bottles:</p>
-                                <span className="badge bg-info rounded-pill">{totalOrderedBottlesOnselectedDate}</span>
-                            </li>   
-                        </ul>
-                    </div>   
-            </div>
-
-            { fetchTotalVaccinesGivenatSelectedDate.length > 0 ? <div className="pieChart col-lg-6">
-                    <PieChartAtSelectedDate 
-                        fetchVaccinationDateOfAntique={fetchVaccinationDateOfAntique.length} 
-                        fetchVaccinationDateOfSolarBuddhica={fetchVaccinationDateOfSolarBuddhica.length}
-                        fetchVaccinationDateOfZerpfy={fetchVaccinationDateOfZerpfy.length}
-                    />
-            </div>
-            : null}
+          <div className="textInfo">
+            <ul className="list-group">
+              <p>Information of vaccines exact at the selected date:</p>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                <p>no. of Antiqua vaccine given:</p>
+                <span className="badge bg-primary rounded-pill">
+                  {antiquaVaccineOnSelectedDate.length}
+                </span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                <p>no. of SolarBuddhica vaccine given:</p>
+                <span className="badge bg-success rounded-pill">
+                  {solarVaccineOnSelectedDate.length}
+                </span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                <p>no. of Zerpfy vaccine given:</p>
+                <span className="badge bg-warning rounded-pill">
+                  {zerpfyVaccineOnSelectedDate.length}
+                </span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                <p>total no. of vaccines given:</p>
+                <span className="badge bg-dark rounded-pill">
+                  {fetchTotalVaccinesGivenatSelectedDate.length}
+                </span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                <p>no. of arrived vaccine's bottles:</p>
+                <span className="badge bg-info rounded-pill">
+                  {totalOrderedBottlesOnselectedDate}
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
-        </>
-    )
+
+        {fetchTotalVaccinesGivenatSelectedDate.length > 0 ? (
+          <div className="pieChart col-lg-6">
+            <PieChartAtSelectedDate
+              fetchVaccinationDateOfAntique={
+                antiquaVaccineOnSelectedDate.length
+              }
+              fetchVaccinationDateOfSolarBuddhica={
+                solarVaccineOnSelectedDate.length
+              }
+              fetchVaccinationDateOfZerpfy={zerpfyVaccineOnSelectedDate.length}
+            />
+          </div>
+        ) : null}
+      </div>
+    </>
+  );
 }

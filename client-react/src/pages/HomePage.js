@@ -227,9 +227,9 @@ export default function HomePage() {
             <VaccinationResult />
           </div>
           <hr />
-          {/* <div className="hompage_result col-lg-11 mx-auto">
+          <div className="hompage_result col-lg-11 mx-auto">
             <DateSelection />
-          </div> */}
+          </div>
           <hr />
           <Footer />
         </div>
