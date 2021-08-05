@@ -120,14 +120,19 @@ export default function DateSelection() {
               dateFormat="yyyy-MM-dd"
             />
           </div>
-          <p>Information of vaccines until the selected data:</p>
+          <div className="mt-5">
+            <p>
+              On given table, you'll see the information of vaccines until the
+              selected date:
+            </p>
+          </div>
 
           <table className="table table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">#Producers</th>
                 <th scope="col">Injt.amt/bottle</th>
-                <th scope="col">Total vaccines</th>
+                <th scope="col">Given vaccines</th>
                 <th scope="col">Expired bottles</th>
                 <th scope="col">Expired vaccines</th>
               </tr>
@@ -153,6 +158,25 @@ export default function DateSelection() {
                 <td>{totalZerpfyVaccineGivenUntilSelectedDate.length}</td>
                 <td>{expiredBottleOfZerpfy.length}</td>
                 <td>{expiredBottleOfZerpfy.length * 5}</td>
+              </tr>
+              <tr className="table-warning">
+                <th scope="row">Total</th>
+                <td>-</td>
+                <td>
+                  {totalZerpfyVaccineGivenUntilSelectedDate.length +
+                    totalAntiqueVaccineGivenUntilSelectedDate.length +
+                    totalSolarVaccineGivenUntilSelectedDate.length}
+                </td>
+                <td>
+                  {expiredBottleOfZerpfy.length +
+                    expiredBottleOfAntiqua.length +
+                    expiredBottleOfsolarBuddhica.length}
+                </td>
+                <td>
+                  {expiredBottleOfZerpfy.length * 5 +
+                    expiredBottleOfAntiqua.length * 4 +
+                    expiredBottleOfsolarBuddhica.length * 6}
+                </td>
               </tr>
             </tbody>
             <p>Each bottle(s) expire after 30 days of arrival.</p>
