@@ -18,7 +18,10 @@ DB_PASS=Iwanttoconnect
 
 ## Available Scripts
 
-In the project's root directory, you can run the app using command:
+Before starts the app, please install node_modules on both services. \
+`npm install`
+
+Then, In the project's root directory, you can run the app using command:
 ### `npm run dev` 
 
 Runs the app in the development mode.\
