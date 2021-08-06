@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { antiquaData } from "../../data/antiqua";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataAction } from "../../Redux/Action/getData-action";
-import BarChart_producers from "../BarChart_producers";
+import BarChart_producers from "../barChart/BarChart_producers";
 import TextInfo from "../TextInfo/TextInfo";
 
 export default function AntiquaResult() {

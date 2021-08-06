@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
-import { zerpfy } from "../data/zerpfy";
+import { SolarBuddhica } from "../../data/solarBuddhica";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getSolarBuddhicaAction,
-  getZerpfyAction,
-} from "../Redux/Action/getData-action";
-import BarChart_producers from "./BarChart_producers";
-import TextInfo from "./TextInfo/TextInfo";
+import { getSolarBuddhicaAction } from "../../Redux/Action/getData-action";
+import BarChart_producers from "../barChart/BarChart_producers";
+import TextInfo from "../TextInfo/TextInfo";
 
-export default function ZerpfyResult() {
+export default function SolarBuddhicaResult() {
   const dispatch = useDispatch();
-  const { allZerpfyData } = useSelector((state) => state.dataReducer);
+  const { allSolarBuddhicaData } = useSelector((state) => state.dataReducer);
   let count = 0;
   let kysArray = [];
   let HyksArray = [];
@@ -22,20 +19,20 @@ export default function ZerpfyResult() {
 
   useEffect(() => {
     try {
-      fetchData(zerpfy);
+      fetchData(SolarBuddhica);
     } catch (error) {
       console.log("there is an error fetching the data", error);
     }
   }, []);
 
-  const fetchData = (zerpfy) => {
-    dispatch(getZerpfyAction(zerpfy));
+  const fetchData = (SolarBuddhica) => {
+    dispatch(getSolarBuddhicaAction(SolarBuddhica));
   };
 
   const fetchOrderedData = () => {
-    return allZerpfyData.map((item, index) => {
-      if (item.vaccine === "Zerpfy") {
-        VaccineName = "Zerpfy";
+    return allSolarBuddhicaData.map((item, index) => {
+      if (item.vaccine === "SolarBuddhica") {
+        VaccineName = "SolarBuddhica";
       }
       if (item.healthCareDistrict === "KYS") {
         count += 1;
@@ -58,7 +55,7 @@ export default function ZerpfyResult() {
   fetchOrderedData();
 
   const fetchReceivedVaccine = () => {
-    allZerpfyData.map((item) => {
+    allSolarBuddhicaData.map((item) => {
       const getDate = item.arrived;
       const nowDate = Date();
       if (nowDate >= getDate) {
@@ -74,7 +71,7 @@ export default function ZerpfyResult() {
       <div className="col-12 vaccinationResult">
         <TextInfo
           receivedVaccineArray={receivedVaccineArray.length}
-          dataLength={allZerpfyData.length}
+          dataLength={allSolarBuddhicaData.length}
           VaccineName={VaccineName}
           kysArray={kysArray.length}
           HyksArray={HyksArray.length}

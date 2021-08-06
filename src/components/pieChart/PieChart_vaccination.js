@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../style.css";
 import { PieChart, Pie, Tooltip, Cell, Legend } from "recharts";
 
 export default function PieChartVaccination(props) {

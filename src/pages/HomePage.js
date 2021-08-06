@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import AntiquaResult from "../components/AntiquaResult/AntiquaResult";
-import BarChart_producers from "../components/BarChart_producers";
+import BarChart_producers from "../components/barChart/BarChart_producers";
 import "./pages.css";
-import SolarBuddhicaResult from "../components/SolarBuddhicaResult";
-import ZerpfyResult from "../components/ZerpfyResult";
-import VaccinationResult from "../components/VaccinationResult";
-import DateSelection from "../components/DateSelection";
+import SolarBuddhicaResult from "../components/solarBuddhica/SolarBuddhicaResult";
+import ZerpfyResult from "../components/zerpfy/ZerpfyResult";
+import VaccinationResult from "../components/vaccinationInfo/VaccinationResult";
+import DateSelection from "../components/dateSelection/DateSelection";
 import Footer from "../components/footer/Footer";
 
 export default function HomePage() {

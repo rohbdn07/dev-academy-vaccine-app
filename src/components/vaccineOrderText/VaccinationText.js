@@ -1,6 +1,6 @@
 import React from "react";
 import PropsTypes from "prop-types";
-import "./style.css";
+import "../style.css";
 
 export default function VaccinationText(props) {
   const {

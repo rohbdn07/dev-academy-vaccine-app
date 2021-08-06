@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
-import { SolarBuddhica } from "../data/solarBuddhica";
+import { zerpfy } from "../../data/zerpfy";
 import { useDispatch, useSelector } from "react-redux";
-import { getSolarBuddhicaAction } from "../Redux/Action/getData-action";
-import BarChart_producers from "./BarChart_producers";
-import TextInfo from "./TextInfo/TextInfo";
+import {
+  getSolarBuddhicaAction,
+  getZerpfyAction,
+} from "../../Redux/Action/getData-action";
+import BarChart_producers from "../barChart/BarChart_producers";
+import TextInfo from "../TextInfo/TextInfo";
 
-export default function SolarBuddhicaResult() {
+export default function ZerpfyResult() {
   const dispatch = useDispatch();
-  const { allSolarBuddhicaData } = useSelector((state) => state.dataReducer);
+  const { allZerpfyData } = useSelector((state) => state.dataReducer);
   let count = 0;
   let kysArray = [];
   let HyksArray = [];
@@ -19,20 +22,20 @@ export default function SolarBuddhicaResult() {
 
   useEffect(() => {
     try {
-      fetchData(SolarBuddhica);
+      fetchData(zerpfy);
     } catch (error) {
       console.log("there is an error fetching the data", error);
     }
   }, []);
 
-  const fetchData = (SolarBuddhica) => {
-    dispatch(getSolarBuddhicaAction(SolarBuddhica));
+  const fetchData = (zerpfy) => {
+    dispatch(getZerpfyAction(zerpfy));
   };
 
   const fetchOrderedData = () => {
-    return allSolarBuddhicaData.map((item, index) => {
-      if (item.vaccine === "SolarBuddhica") {
-        VaccineName = "SolarBuddhica";
+    return allZerpfyData.map((item, index) => {
+      if (item.vaccine === "Zerpfy") {
+        VaccineName = "Zerpfy";
       }
       if (item.healthCareDistrict === "KYS") {
         count += 1;
@@ -55,7 +58,7 @@ export default function SolarBuddhicaResult() {
   fetchOrderedData();
 
   const fetchReceivedVaccine = () => {
-    allSolarBuddhicaData.map((item) => {
+    allZerpfyData.map((item) => {
       const getDate = item.arrived;
       const nowDate = Date();
       if (nowDate >= getDate) {
@@ -71,7 +74,7 @@ export default function SolarBuddhicaResult() {
       <div className="col-12 vaccinationResult">
         <TextInfo
           receivedVaccineArray={receivedVaccineArray.length}
-          dataLength={allSolarBuddhicaData.length}
+          dataLength={allZerpfyData.length}
           VaccineName={VaccineName}
           kysArray={kysArray.length}
           HyksArray={HyksArray.length}
