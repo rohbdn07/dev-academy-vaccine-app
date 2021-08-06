@@ -3,7 +3,7 @@ import { SolarBuddhica } from "../../data/solarBuddhica";
 import { useDispatch, useSelector } from "react-redux";
 import { getSolarBuddhicaAction } from "../../Redux/Action/getData-action";
 import BarChart_producers from "../barChart/BarChart_producers";
-import TextInfo from "../TextInfo/TextInfo";
+import TextInfo from "../textInfo/TextInfo";
 
 export default function SolarBuddhicaResult() {
   const dispatch = useDispatch();

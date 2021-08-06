@@ -6,7 +6,7 @@ import {
   getZerpfyAction,
 } from "../../Redux/Action/getData-action";
 import BarChart_producers from "../barChart/BarChart_producers";
-import TextInfo from "../TextInfo/TextInfo";
+import TextInfo from "../textInfo/TextInfo";
 
 export default function ZerpfyResult() {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/navbar/Navbar";
-import AntiquaResult from "../components/AntiquaResult/AntiquaResult";
+import AntiquaResult from "../components/antiquaResult/AntiquaResult";
 import BarChart_producers from "../components/barChart/BarChart_producers";
 import "./pages.css";
 import SolarBuddhicaResult from "../components/solarBuddhica/SolarBuddhicaResult";
