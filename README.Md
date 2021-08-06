@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with Create React App. This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation in ReactJs. Backend api handled by NodeJs and Express. The database used for storing Json data is MongoDB. ChartJs is used for graphical presentation along with textual representation. Moreover, React-Redux, Redux-thunk is used for the state managements. In addition, for development mode,' npm Concurrently' is installed to serve/run both serives (front & backend) at once to display app on screen.
+This project was bootstrapped with Create React App. This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation in ReactJs. Backend api handled by NodeJs and Express. The database used for storing Json data is MongoDB. ChartJs is used for graphical presentation along with textual representation. Moreover, React-Redux, Redux-thunk is used for the state managements. In addition, for development mode,' npm Concurrently' is installed to serve/run both serives (front & backend) at once to display app on screen. Moreover, the app is containerzied with Docker and Docker-compose to build and run multi-services.
 
 Desktop:
 ![latest-app-screnshot-for-desktop-screen](https://user-images.githubusercontent.com/57314666/128486112-d24926d1-3dcb-4aeb-a291-1622e6b1265c.png) 
@@ -18,14 +18,23 @@ DB_PASS=Iwanttoconnect
 
 ## Available Scripts
 
-Before starts the app, please install node_modules on both services. \
+You can run this app, either using 'npm' Or using 'docker'. 
+#### Docker way: 
+
+Go to project's root directory (outside of front and backend), simply run this command: 
+
+### `docker-compose up --build` 
+
+#### NPM way:
+
+Before starts the app, please install 'node_modules' on both section (front and backend). \
 `npm install`
 
 Then, In the project's root directory, you can run the app using command:
 ### `npm run dev` 
 
 Runs the app in the development mode.\
- 'concurrently' is installed to serve/run both serives (front & backend) at once to display app on screen so that you can avoid running services seperately from your terminal.
+ Note: 'concurrently' is installed to serve/run both serives (front & backend) at once to display app on screen so that you can avoid running services seperately from your terminal.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
