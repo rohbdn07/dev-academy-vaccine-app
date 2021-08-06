@@ -163,75 +163,84 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
       {loading ? (
-        <div>
-          <h5 className="text-center">Loading...</h5>
+        <div className="d-flex justify-content-center align-items-center mt-5">
+          <div
+            class="spinner-grow text-primary"
+            style={{ width: "3rem", height: "3rem" }}
+            role="status"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
       ) : errMessage ? (
         <div>
           <h5 className="text-center">{errMessage}</h5>
         </div>
       ) : (
-        <div className="homepage_wrapper">
-          <div className="homepage_header col-11 mx-auto">
-            <h3>Vaccines information:</h3>
-            <p>
-              The given data(s) are categorized into different intresting
-              information. Information are presented in the form of Graphs and
-              textual form.
-            </p>
+        <div>
+          <Navbar />
+
+          <div className="homepage_wrapper">
+            <div className="homepage_header col-11 mx-auto">
+              <h3>Vaccines information:</h3>
+              <p>
+                The given data(s) are categorized into different intresting
+                information. Information are presented in the form of Graphs and
+                textual form.
+              </p>
+            </div>
+            <h6 className="col-11 mx-auto pt-3">Ordered vaccines:</h6>
+            <div className="hompage_result col-lg-11 mx-auto">
+              <VaccineResults
+                receivedVaccineArray={AntiquareceivedVaccineArray}
+                VaccineName={VaccineNameAntiqua}
+                dataLength={antiquaTotalorderVaccine}
+                kysArray={AntiquaKysArray}
+                HyksArray={AntiquaHyksArray}
+                TyksArray={AntiquaTyksArray}
+                OysArray={AntiquaOysArray}
+                TaysArray={AntiquaTaysArray}
+              />
+            </div>
+            <hr />
+            <div className="hompage_result col-lg-11 mx-auto">
+              <VaccineResults
+                receivedVaccineArray={SolarBuddhicareceivedVaccineArray}
+                VaccineName={VaccineNameSolar}
+                dataLength={solarBuddhicaTotalOrderVaccine}
+                kysArray={SolarBuddhicaKysArray}
+                HyksArray={SolarBuddhicaHyksArray}
+                TyksArray={SolarBuddhicaTyksArray}
+                OysArray={SolarBuddhicaOysArray}
+                TaysArray={SolarBuddhicaTaysArray}
+              />
+            </div>
+            <hr />
+            <div className="hompage_result col-lg-11 mx-auto">
+              <VaccineResults
+                receivedVaccineArray={ZerpfyreceivedVaccineArray}
+                VaccineName={VaccineNameZerpfy}
+                dataLength={zerpfyTotalOrderVaccine}
+                kysArray={ZerpfyKysArray}
+                HyksArray={ZerpfyHyksArray}
+                TyksArray={ZerpfyTyksArray}
+                OysArray={ZerpfyOysArray}
+                TaysArray={ZerpfyTaysArray}
+              />
+            </div>
+            <hr />
+            <h6 className="col-11 mx-auto pt-3">Vaccination info:</h6>
+            <div className="hompage_result col-lg-11 mx-auto">
+              <VaccinationResult />
+            </div>
+            <hr />
+            <div className="hompage_result col-lg-11 mx-auto">
+              <DateSelection />
+            </div>
+            <hr />
+            <Footer />
           </div>
-          <h6 className="col-11 mx-auto pt-3">Ordered vaccines:</h6>
-          <div className="hompage_result col-lg-11 mx-auto">
-            <VaccineResults
-              receivedVaccineArray={AntiquareceivedVaccineArray}
-              VaccineName={VaccineNameAntiqua}
-              dataLength={antiquaTotalorderVaccine}
-              kysArray={AntiquaKysArray}
-              HyksArray={AntiquaHyksArray}
-              TyksArray={AntiquaTyksArray}
-              OysArray={AntiquaOysArray}
-              TaysArray={AntiquaTaysArray}
-            />
-          </div>
-          <hr />
-          <div className="hompage_result col-lg-11 mx-auto">
-            <VaccineResults
-              receivedVaccineArray={SolarBuddhicareceivedVaccineArray}
-              VaccineName={VaccineNameSolar}
-              dataLength={solarBuddhicaTotalOrderVaccine}
-              kysArray={SolarBuddhicaKysArray}
-              HyksArray={SolarBuddhicaHyksArray}
-              TyksArray={SolarBuddhicaTyksArray}
-              OysArray={SolarBuddhicaOysArray}
-              TaysArray={SolarBuddhicaTaysArray}
-            />
-          </div>
-          <hr />
-          <div className="hompage_result col-lg-11 mx-auto">
-            <VaccineResults
-              receivedVaccineArray={ZerpfyreceivedVaccineArray}
-              VaccineName={VaccineNameZerpfy}
-              dataLength={zerpfyTotalOrderVaccine}
-              kysArray={ZerpfyKysArray}
-              HyksArray={ZerpfyHyksArray}
-              TyksArray={ZerpfyTyksArray}
-              OysArray={ZerpfyOysArray}
-              TaysArray={ZerpfyTaysArray}
-            />
-          </div>
-          <hr />
-          <h6 className="col-11 mx-auto pt-3">Vaccination info:</h6>
-          <div className="hompage_result col-lg-11 mx-auto">
-            <VaccinationResult />
-          </div>
-          <hr />
-          <div className="hompage_result col-lg-11 mx-auto">
-            <DateSelection />
-          </div>
-          <hr />
-          <Footer />
         </div>
       )}
     </>
