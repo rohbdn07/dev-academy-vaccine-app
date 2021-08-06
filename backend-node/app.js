@@ -1,30 +1,31 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const mangoose= require('mongoose');
-const path = require('path');
-const getvaccineRouter = require('./router/getVaccine');
-
+require("dotenv").config();
+const express = require("express");
+const router = express.Router();
+const cors = require("cors");
+const mangoose = require("mongoose");
+const path = require("path");
+const getvaccineRouter = require("./router/getVaccine");
 
 const app = express();
 
-
 //connection to Mangodb...
-const dbURI = process.env.MONGODB_URI;
-mangoose.connect( `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qvvz3.mongodb.net/dev-vaccine?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+// const dbURI = process.env.MONGODB_URI;
+mangoose
+  .connect(
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qvvz3.mongodb.net/dev-vaccine?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+    }
+  )
   .then(() => console.log("connected to mongo-db"))
   .catch((err) => console.log("there is an error", err));
 
-
 //listing to LocalHost
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => console.log(`listening on ${PORT}`));
-  console.log('  Press CTRL-C to stop\n');
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
+console.log("  Press CTRL-C to stop\n");
 
 // parse json request body
 app.use(express.json());
@@ -33,11 +34,16 @@ app.use(express.urlencoded({ extended: true }));
 // enable cors
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 //get data from db
-app.use('/', getvaccineRouter)
+app.use(getvaccineRouter);
 
-
+// The `res.redirect()` function sends back an HTTP 302 by default.
+// When an HTTP client receives a response with status 302, it will send
+// an HTTP request to the URL in the response, in this case `/`
+router.get("*", (req, res) => {
+  res.redirect("/");
+});
 
 module.exports = app;
