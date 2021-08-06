@@ -15,7 +15,10 @@ services:
       - "5050:5050"
     depends_on:
       - mongo
-    env_file: ./backend-node/.env
+    # env_file: ./backend-node/.env
+    environment: 
+      - DB_USER=rohit-dev
+      - DB_PASS=Iwanttoconnect
     environment:
       - NODE_ENV=development
     networks:
