@@ -1,7 +1,6 @@
 # Getting Started with Create React App
-#### NOTE: In present situation, Master branch runs only front-end which includes docker service, see below how to run it. Whereas, other branch: 'vaccine-dev-branch' includes front-end (react), backend(NodeJs) and database(MongoDB). For more info, visit vaccine-dev-branch and to Run it: 
-
-### `npm run dev`
+#### NOTE: 
+In present situation, Master branch runs only front-end which includes docker service, see below how to run it. Whereas, other branch: 'vaccine-dev-branch' includes front-end (react), backend(NodeJs) and database(MongoDB). For more info, visit: vaccine-dev-branch. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation from the given Json data(s). Web UI is done with ReactJs, and ChartJs for graphical presentation along with textual representation. React-Redux is being used for the state managements. Jest and Enzyme is being used for unit-testing on some of the components. Moreover, for the containerization, Docker is being used on the project.
 
