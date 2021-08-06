@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const AllVaccineCompanyData = require("../model/vaccineCompany-schema");
-const AllVaccinationData = require("../model/vaccinationDone-schema");
+const AllVaccineCompanyData = require("../db/model/vaccineCompany-schema");
+const AllVaccinationData = require("../db/model/vaccinationDone-schema");
 
 router.get("/", async (req, res) => {
   try {
