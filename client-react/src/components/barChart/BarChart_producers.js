@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./style.css";
+import "../style.css";
 
 export default function BarChart_producers(props) {
   const { kysArray, HyksArray, TyksArray, OysArray, TaysArray } = props;

@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import VaccinationText from "./VaccinationText";
-import PieChartVaccination from "./PieChart_vaccination";
-import "./style.css";
+import VaccinationText from "../vaccineOrderText/VaccinationText";
+import PieChartVaccination from "../pieChart/PieChart_vaccination";
+import "../style.css";
 
 export default function VaccinationResult() {
   const dispatch = useDispatch();

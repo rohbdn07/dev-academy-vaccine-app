@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import BarChart_producers from "../BarChart_producers";
-import TextInfo from "../TextInfo/TextInfo";
+import BarChart_producers from "../barChart/BarChart_producers";
+import TextInfo from "../textInfo/TextInfo";
 
 export default function VaccineResults(props) {
   const {

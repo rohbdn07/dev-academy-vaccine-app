@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataAction } from "../Redux/Action/getData-action";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import VaccineResults from "../components/results/VaccineResults";
-import BarChart_producers from "../components/BarChart_producers";
+import BarChart_producers from "../components/barChart/BarChart_producers";
 import "./pages.css";
-import VaccinationResult from "../components/VaccinationResult";
-import DateSelection from "../components/DateSelection";
+import VaccinationResult from "../components/vaccinationInfo/VaccinationResult";
+import DateSelection from "../components/dateSelection/DateSelection";
 import Footer from "../components/footer/Footer";
 
 export default function HomePage() {
