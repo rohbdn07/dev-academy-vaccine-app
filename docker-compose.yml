@@ -12,14 +12,13 @@ services:
       - /app/node_modules
     restart: always
     ports:
-      - "5050:5050"
+      - "5000:5000"
     depends_on:
       - mongo
     # env_file: ./backend-node/.env
     environment: 
       - DB_USER=rohit-dev
       - DB_PASS=Iwanttoconnect
-    environment:
       - NODE_ENV=development
     networks:
       - dev-vaccine-network
