@@ -28,7 +28,12 @@ Go to project's root directory (outside of client-react and backend-node folders
 ### `docker-compose up --build` 
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. \
-Note: if this gives an error, showing 'network error' in localhost:3000 then kindly check environment variables used for mongodb connection in backend-node folder. Possible reason for error is bad authentication for mongodb connection to Atlas.
+Note: In case, if this gives an error, showing 'network error' in localhost:3000 then kindly check environment variables used for mongodb connection in backend-node folder. Possible reason for error is bad authentication for mongodb connection to Atlas.
+
+To stop the docker container, run this command in the project's root directory: 
+### `docker-compose down` 
+This command stops all container services and removed. For more info on docker, visit: https://docs.docker.com/
+
 #### NPM way:
 
 Before starts the app, please install 'node_modules' on both folders (client-react and backend-node) separately using: \
