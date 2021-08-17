@@ -12,7 +12,7 @@ const app = express();
 // const dbURI = process.env.MONGODB_URI;
 mangoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qvvz3.mongodb.net/dev-vaccine?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qvvz3.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
