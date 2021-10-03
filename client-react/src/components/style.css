@@ -1,23 +1,23 @@
 .navbar_bg {
-  background-color: rgba(10, 53, 98, 1);
-  /* background-color: #2596be; */
+    background-color: rgba(10, 53, 98, 1);
+    /* background-color: #2596be; */
 }
 
 .vaccinationResult {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .textInfo {
-  width: 100%;
-  max-width: 30rem;
+    width: 100%;
+    max-width: 30rem;
 }
 
 .textInfo li,
 p {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 /* .barchart{
@@ -26,89 +26,89 @@ p {
 } */
 
 .date_selection {
-  display: flex;
+    display: flex;
 }
 
 .pieChart {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .footer_end {
-  /* width: 100%; */
-  /* display: flex;
+    /* width: 100%; */
+    /* display: flex;
     flex-wrap: wrap; */
-  background-color: rgba(10, 53, 98, 1);
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  color: white;
+    background-color: rgba(10, 53, 98, 1);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    color: white;
 }
 .footer_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .footer_end {
-  width: 100%;
+    width: 100%;
 }
 .fotend_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .fotend_middle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.2rem;
 }
 
 .fotend_middle p {
-  font-size: 0.8rem;
-  margin-right: 1.5rem;
+    font-size: 0.8rem;
+    margin-right: 1.5rem;
 }
 
 .fotend_right {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 @media (max-width: 576px) {
-  p {
-    font-size: 0.8rem;
-  }
+    p {
+        font-size: 0.8rem;
+    }
 
-  .date_selection {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-  }
+    .date_selection {
+        display: flex;
+        flex-direction: column;
+        font-size: small;
+    }
 
-  .table {
-    font-size: 0.7rem;
-  }
+    .table {
+        font-size: 0.7rem;
+    }
 
-  .fotend_wrapper {
-    display: flex;
-    flex-direction: column;
-  }
+    .fotend_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
 
-  /* .textInfo{
+    /* .textInfo{
     min-width: 20rem;
     margin-bottom: 1rem;
 } */
 
-  .barchart {
-    overflow-x: scroll;
-    font-size: small;
-    /* height: 15rem;
+    .barchart {
+        overflow-x: scroll;
+        font-size: small;
+        /* height: 15rem;
     width: 25rem; */
-  }
+    }
 
-  .piechart {
-    font-size: 0.7rem;
-  }
+    .piechart {
+        font-size: 0.7rem;
+    }
 }
