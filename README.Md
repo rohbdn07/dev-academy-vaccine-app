@@ -1,19 +1,17 @@
 # Getting Started with Dev-vaccine App
 
-This project was bootstrapped with Create React App. This project is my implementation for an assignment given by solita dev academy-2021. Project contains Web UI implementation in ReactJs. Backend api handled by NodeJs and Express. The database used for storing Json data is MongoDB. ChartJs is used for graphical presentation along with textual representation. Moreover, React-Redux, Redux-thunk is used for the state managements. In addition, for development mode,' npm Concurrently' is installed to serve/run both serives (front & backend) at once to display app on the screen. Moreover, the app is containerzied with Docker and Docker-compose to build and run multi-services in a development mode inside a container.
+This project was bootstrapped with Create React App. This project is my implementation to display the data with visualization using graphs. Project contains Web UI implementation in ReactJs. Backend api handled by NodeJs and Express. The database used for storing Json data is MongoDB. Database contains pre-loaded dummy data. ChartJs is used for graphical presentation along with textual representation. Moreover, React-Redux, Redux-thunk is used for the state managements. In addition, for development mode,' npm Concurrently' is installed to serve/run both serives (front & backend) at once to display app on the screen. Moreover, the app is containerzied with Docker and Docker-compose to build and run multi-services in a development mode inside a container.
 Please follow the instructions to run this app, below:
 
-
 Desktop:
-![latest-app-screnshot-for-desktop-screen](https://user-images.githubusercontent.com/57314666/128486112-d24926d1-3dcb-4aeb-a291-1622e6b1265c.png) 
+![latest-app-screnshot-for-desktop-screen](https://user-images.githubusercontent.com/57314666/128486112-d24926d1-3dcb-4aeb-a291-1622e6b1265c.png)
 
 Mobile:
 ![latest-app-screenshot-for-mobile-view](https://user-images.githubusercontent.com/57314666/128486547-13ee016c-c331-4dde-882a-cf50a405010d.png)
 
-
 #### Environmental variable
 
-You'll need following environment variables to connect api with database. 
+You'll need following environment variables to connect api with database.
 Database contains some dummy data. Put this variables in /backend-node/app.js. (If you are running this app through using 'npm'). \
 process.env.DB_USER=your database user \
 process.env.DB_PASS=your database password
@@ -21,19 +19,23 @@ process.env.DB_NAME=your database name
 
 ## Available Scripts
 
-You can run this app in development mode, either using `npm` Or using `docker`. 
-#### Docker way: 
+You can run this app in development mode, either using `npm` Or using `docker`.
 
-Go to project's root directory (outside of client-react and backend-node folders), simply run this command: 
+#### Docker way:
 
-### `docker-compose up --build` 
+Go to project's root directory (outside of client-react and backend-node folders), simply run this command:
+
+### `docker-compose up --build`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. \
 Note: In case, if this gives an error, showing 'network error' in localhost:3000 then kindly check environment variables used for mongodb connection in backend-node folder. Possible reason for error is bad authentication for mongodb connection to Atlas.
 
-To stop the docker container, run this command in the project's root directory: 
-### `docker-compose down` 
-This command stops all container services and removed. For more info on docker, visit: https://docs.docker.com/
+To stop the docker container, run this command in the project's root directory:
+
+### `docker-compose down`
+
+This command stops all container services and removed. For more info on docker, visit: https://docs.docker.com/ \
+In case, if you are having problem to run the application through docker then I highly recommended you to see docker document: https://docs.docker.com/compose/
 
 #### NPM way:
 
@@ -41,7 +43,8 @@ Before starts the app, please install 'node_modules' on both folders (client-rea
 `npm install`
 
 Then, In the project's root directory, you can run the app using command:
-### `npm run dev` 
+
+### `npm run dev`
 
 Runs the app in the development mode.\
  Note: 'concurrently' is installed to serve/run both folders (client-react & backend-node) at once to display app on the screen so that you can avoid running services seperately in seperate terminal or command-line.
