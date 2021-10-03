@@ -3,7 +3,7 @@ import {
     VACCINEDATA_GET_SUCCESS,
     VACCINEDATA_GET_FAILURE,
 } from "../Constants/action-types";
-// import axiosInstance from "../../services/axios";
+import axiosInstance from "../../services/axios";
 import axios from "axios";
 
 export const getDataAction = () => async (dispatch) => {
@@ -11,7 +11,7 @@ export const getDataAction = () => async (dispatch) => {
         dispatch({
             type: VACCINEDATA_TO_GET_LOADING,
         });
-        const { data } = await axios.get("/");
+        const { data } = await axiosInstance.get("/");
         dispatch({
             type: VACCINEDATA_GET_SUCCESS,
             payloadOne: data.allCompanyVaccineData,
