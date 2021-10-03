@@ -4,14 +4,15 @@ import {
     VACCINEDATA_GET_FAILURE,
 } from "../Constants/action-types";
 import axiosInstance from "../../services/axios";
-import axios from "axios";
+// import axios from "axios";
 
 export const getDataAction = () => async (dispatch) => {
     try {
         dispatch({
             type: VACCINEDATA_TO_GET_LOADING,
         });
-        const { data } = await axiosInstance.get(axiosInstance.baseURL);
+        const { data } = await axiosInstance.get("/api/vaccines");
+        console.log("the data", data);
         dispatch({
             type: VACCINEDATA_GET_SUCCESS,
             payloadOne: data.allCompanyVaccineData,
