@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project is my implementation of an assignment given by solita dev academy-2021. Project contains Web UI implementation from the given Json data(s). Web UI is done with ReactJs, and ChartJs for graphical presentation along with textual representation. React-Redux is being used for the state managements. Jest and Enzyme is being used for unit-testing on some of the components. Moreover, for the containerization, Docker is being used on the project.
+This project was bootstrapped with Create React App. This project is my implementation to display the data with visualization using graphs. Project contains Web UI implementation in ReactJs. Backend api handled by NodeJs and Express. The database used for storing Json data is MongoDB. Database contains pre-loaded dummy data. ChartJs is used for graphical presentation along with textual representation. Moreover, React-Redux, Redux-thunk is used for the state managements. In addition, for development mode,' npm Concurrently' is installed to serve/run both serives (front & backend) at once to display app on the screen. Moreover, the app is containerzied with Docker and Docker-compose to build and run multi-services in a development mode inside a container.
+Please follow the instructions to run this app, below:
 
 Desktop:
 ![dev-vaccine-desktop-version](https://user-images.githubusercontent.com/57314666/127071751-3bd32b5a-39ce-42ca-8889-ddae777ac8a7.png)
@@ -8,17 +9,29 @@ Desktop:
 Mobile:
 ![dev-vaccine-mobile-version](https://user-images.githubusercontent.com/57314666/127075510-7761751f-7c2c-4942-9a14-0ba7bd513acb.png)
 
+#### Environmental variable
 
+You'll need following environment variables to connect api with database.
+Database (MongoDB) contains some dummy data which was stored using Postman. Put this variables in /backend-node/app.js. (If you are running this app through using 'npm'). \
+process.env.DB_USER=your database user \
+process.env.DB_PASS=your database password \
+process.env.DB_NAME=your database name
 
 ## Available Scripts
 
-In the project directory, you can run the app either using command: ./up.sh (this is shell-script which runs the command(s) given inside this script) in the project's root directory or using npm start:
+In the project directory, you can run the app either using command docker command or using npm command mentioned as below:
 
-### `./up.sh`
+By using Docker:
 
-Runs the app in the development mode. This single command: ./up.sh (which includes docker-compose up) will install all the npm dependencies (such as: npm install) and build
+### `docker-compose up --build`
+
+Runs the app in the development mode. This single command: docker-compose up --build, will install all the npm dependencies (such as: npm install) and build the app
 so that you don't need to install yourself after cloning this repo.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+In case, if you are having problem to run the application through docker then I highly recommended you to see docker document: https://docs.docker.com/compose/
+
+By using NPM:
 
 ### `npm start`
 
@@ -28,12 +41,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `./down.sh`
+### `docker-compose down`
 
-This is shell-script command (includes docker-compose down). It will stops and removes the container which was created. And you will see nothing on the browser: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It will stops and removes the container which was created initially. And you will see nothing on the browser: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Again to run the container and see the result in the browser, you have to run: 
-##### `./up.sh`
+Again to run the container and to display the contains in the browser, you have to run:
+
+##### `docker-compose up --build`
 
 ### `npm test`
 
