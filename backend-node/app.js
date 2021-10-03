@@ -9,16 +9,13 @@ const getvaccineRouter = require("./router/getVaccine");
 const app = express();
 
 //connection to Mangodb...
-// const dbURI = process.env.MONGODB_URI;
+const dbURI = process.env.MONGODB_URI;
 mangoose
-    .connect(
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qvvz3.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-        }
-    )
+    .connect(dbURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+    })
     .then(() => console.log("connected to mongo-db"))
     .catch((err) => console.log("there is an error", err));
 
