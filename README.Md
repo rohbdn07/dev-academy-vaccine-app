@@ -14,7 +14,7 @@ Mobile:
 You'll need following environment variables to connect api with database.
 Database contains some dummy data. Put this variables in /backend-node/app.js. (If you are running this app through using 'npm'). \
 process.env.DB_USER=your database user \
-process.env.DB_PASS=your database password
+process.env.DB_PASS=your database password \
 process.env.DB_NAME=your database name
 
 ## Available Scripts
