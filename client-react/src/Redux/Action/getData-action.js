@@ -4,7 +4,7 @@ import {
     VACCINEDATA_GET_FAILURE,
 } from "../Constants/action-types";
 import axiosInstance from "../../services/axios";
-// import axios from "axios";
+import axios from "axios";
 
 export const getDataAction = () => async (dispatch) => {
     try {
