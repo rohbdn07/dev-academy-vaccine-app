@@ -11,7 +11,7 @@ export const getDataAction = () => async (dispatch) => {
         dispatch({
             type: VACCINEDATA_TO_GET_LOADING,
         });
-        const { data } = await axiosInstance.get("/");
+        const { data } = await axiosInstance.get(axiosInstance.baseURL);
         dispatch({
             type: VACCINEDATA_GET_SUCCESS,
             payloadOne: data.allCompanyVaccineData,
