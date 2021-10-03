@@ -32,14 +32,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //Serve static assists if in PRODUCTION
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client-react", "build")));
-    app.get("*", (req, res) => {
-        res.sendFile(
-            path.join(__dirname, "../client-react", "build", "index.html")
-        );
-    });
-}
+
+app.use(express.static(path.join(__dirname, "../client-react", "build")));
+app.get("*", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "../client-react", "build", "index.html")
+    );
+});
 
 //get data from db
 app.use(getvaccineRouter);
