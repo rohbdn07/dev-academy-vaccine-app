@@ -1,62 +1,62 @@
 version: "3.7"
 
 services:
-  backend:
-    build:
-      context: ./backend-node
-      dockerfile: Dockerfile-dev
-    image: dev-vaccine-node-image
-    container_name: dev-vaccine-node
-    volumes:
-      - ./backend-node:/app/backend-node
-      - /app/node_modules
-    restart: always
-    ports:
-      - "5000:5000"
-    depends_on:
-      - mongo
-    # env_file: ./backend-node/.env
-    environment: 
-      - DB_USER=rohit-dev
-      - DB_PASS=Iwanttoconnect
-      - NODE_ENV=development
-    networks:
-      - dev-vaccine-network
-  mongo:
-    image: mongo
-    container_name: dev-vaccine-mongoDB
-    volumes:
-      - data-volume:/data/db
-    ports:
-      - "27017:27017"
-    networks:
-      - dev-vaccine-network
-  client:
-    build:
-      context: ./client-react
-      dockerfile: Dockerfile-dev
-    image: dev-vaccine-client-image
-    container_name: dev-vaccine-react
-    volumes:
-      - ./client-react/src:/app/src
-      - /app/node_modules
-    depends_on:
-      - backend
-    ports:
-      - "3000:3000"
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    stdin_open: true
-    tty: true
-    networks:
-      - dev-vaccine-network
+    backend:
+        build:
+            context: ./backend-node
+            dockerfile: Dockerfile-dev
+        image: dev-vaccine-node-image
+        container_name: dev-vaccine-node
+        volumes:
+            - ./backend-node:/app/backend-node
+            - /app/node_modules
+        restart: always
+        ports:
+            - "5000:5000"
+        depends_on:
+            - mongo
+        # env_file: ./backend-node/.env
+        environment:
+            - DB_USER=rohit-dev
+            - DB_PASS=Iwanttoconnect
+            - NODE_ENV=development
+        networks:
+            - dev-vaccine-network
+    mongo:
+        image: mongo
+        container_name: dev-vaccine-mongoDB
+        volumes:
+            - data-volume:/data/db
+        ports:
+            - "27017:27017"
+        networks:
+            - dev-vaccine-network
+    client:
+        build:
+            context: ./client-react
+            dockerfile: Dockerfile-dev
+        image: dev-vaccine-client-image
+        container_name: dev-vaccine-react
+        volumes:
+            - ./client-react/src:/app/src
+            - /app/node_modules
+        depends_on:
+            - backend
+        ports:
+            - "3000:3000"
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        stdin_open: true
+        tty: true
+        networks:
+            - dev-vaccine-network
 
 networks:
-  dev-vaccine-network:
-    driver: bridge
+    dev-vaccine-network:
+        driver: bridge
 
 volumes:
-  data-volume:
-  node_modules:
-  web-root:
-    driver: local
+    data-volume:
+    node_modules:
+    web-root:
+        driver: local
