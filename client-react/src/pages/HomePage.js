@@ -55,75 +55,78 @@ export default function HomePage() {
     }, []);
 
     const fetchAntiquaOrderedVaccine = () => {
-        vaccineData.map((item, index) => {
-            if (item.vaccine === "Antiqua") {
-                VaccineNameAntiqua = "Antiqua";
-                if (item.healthCareDistrict === "KYS") {
-                    AntiquaCount += 1;
-                    AntiquaKysArray.push(`${AntiquaCount},`);
-                } else if (item.healthCareDistrict === "HYKS") {
-                    AntiquaCount += 1;
-                    AntiquaHyksArray.push(`${AntiquaCount},`);
-                } else if (item.healthCareDistrict === "TYKS") {
-                    AntiquaCount += 1;
-                    AntiquaTyksArray.push(`${AntiquaCount},`);
-                } else if (item.healthCareDistrict === "TAYS") {
-                    AntiquaCount += 1;
-                    AntiquaTaysArray.push(`${AntiquaCount},`);
-                } else {
-                    AntiquaCount += 1;
-                    AntiquaOysArray.push(`${AntiquaCount},`);
+        vaccineData !== undefined &&
+            vaccineData?.map((item, index) => {
+                if (item.vaccine === "Antiqua") {
+                    VaccineNameAntiqua = "Antiqua";
+                    if (item.healthCareDistrict === "KYS") {
+                        AntiquaCount += 1;
+                        AntiquaKysArray.push(`${AntiquaCount},`);
+                    } else if (item.healthCareDistrict === "HYKS") {
+                        AntiquaCount += 1;
+                        AntiquaHyksArray.push(`${AntiquaCount},`);
+                    } else if (item.healthCareDistrict === "TYKS") {
+                        AntiquaCount += 1;
+                        AntiquaTyksArray.push(`${AntiquaCount},`);
+                    } else if (item.healthCareDistrict === "TAYS") {
+                        AntiquaCount += 1;
+                        AntiquaTaysArray.push(`${AntiquaCount},`);
+                    } else {
+                        AntiquaCount += 1;
+                        AntiquaOysArray.push(`${AntiquaCount},`);
+                    }
                 }
-            }
-        });
+            });
     };
 
     const fetchSolarbuddhicaOrderedVaccine = () => {
-        vaccineData.map((item, index) => {
-            if (item.vaccine === "SolarBuddhica") {
-                VaccineNameSolar = "SolarBuddhica";
-                if (item.healthCareDistrict === "KYS") {
-                    SolarBuddhicaCount += 1;
-                    SolarBuddhicaKysArray.push(`${SolarBuddhicaCount},`);
-                } else if (item.healthCareDistrict === "HYKS") {
-                    SolarBuddhicaCount += 1;
-                    SolarBuddhicaHyksArray.push(`${SolarBuddhicaCount},`);
-                } else if (item.healthCareDistrict === "TYKS") {
-                    SolarBuddhicaCount += 1;
-                    SolarBuddhicaTyksArray.push(`${SolarBuddhicaCount},`);
-                } else if (item.healthCareDistrict === "TAYS") {
-                    SolarBuddhicaCount += 1;
-                    SolarBuddhicaTaysArray.push(`${SolarBuddhicaCount},`);
-                } else {
-                    SolarBuddhicaCount += 1;
-                    SolarBuddhicaOysArray.push(`${SolarBuddhicaCount},`);
+        vaccineData !== undefined &&
+            vaccineData?.map((item, index) => {
+                if (item.vaccine === "SolarBuddhica") {
+                    VaccineNameSolar = "SolarBuddhica";
+                    if (item.healthCareDistrict === "KYS") {
+                        SolarBuddhicaCount += 1;
+                        SolarBuddhicaKysArray.push(`${SolarBuddhicaCount},`);
+                    } else if (item.healthCareDistrict === "HYKS") {
+                        SolarBuddhicaCount += 1;
+                        SolarBuddhicaHyksArray.push(`${SolarBuddhicaCount},`);
+                    } else if (item.healthCareDistrict === "TYKS") {
+                        SolarBuddhicaCount += 1;
+                        SolarBuddhicaTyksArray.push(`${SolarBuddhicaCount},`);
+                    } else if (item.healthCareDistrict === "TAYS") {
+                        SolarBuddhicaCount += 1;
+                        SolarBuddhicaTaysArray.push(`${SolarBuddhicaCount},`);
+                    } else {
+                        SolarBuddhicaCount += 1;
+                        SolarBuddhicaOysArray.push(`${SolarBuddhicaCount},`);
+                    }
                 }
-            }
-        });
+            });
     };
 
     const fetchZerpfyOrderedVaccine = () => {
-        vaccineData.map((item, index) => {
-            if (item.vaccine === "Zerpfy") {
-                VaccineNameZerpfy = "Zerpfy";
-                if (item.healthCareDistrict === "KYS") {
-                    ZerpfyCount += 1;
-                    ZerpfyKysArray.push(`${ZerpfyCount},`);
-                } else if (item.healthCareDistrict === "HYKS") {
-                    ZerpfyCount += 1;
-                    ZerpfyHyksArray.push(`${ZerpfyCount},`);
-                } else if (item.healthCareDistrict === "TYKS") {
-                    ZerpfyCount += 1;
-                    ZerpfyTyksArray.push(`${ZerpfyCount},`);
-                } else if (item.healthCareDistrict === "TAYS") {
-                    ZerpfyCount += 1;
-                    ZerpfyTaysArray.push(`${ZerpfyCount},`);
-                } else {
-                    ZerpfyCount += 1;
-                    ZerpfyOysArray.push(`${ZerpfyCount},`);
+        vaccineData !== undefined &&
+            vaccineData?.map((item, index) => {
+                if (item.vaccine === "Zerpfy") {
+                    VaccineNameZerpfy = "Zerpfy";
+                    if (item.healthCareDistrict === "KYS") {
+                        ZerpfyCount += 1;
+                        ZerpfyKysArray.push(`${ZerpfyCount},`);
+                    } else if (item.healthCareDistrict === "HYKS") {
+                        ZerpfyCount += 1;
+                        ZerpfyHyksArray.push(`${ZerpfyCount},`);
+                    } else if (item.healthCareDistrict === "TYKS") {
+                        ZerpfyCount += 1;
+                        ZerpfyTyksArray.push(`${ZerpfyCount},`);
+                    } else if (item.healthCareDistrict === "TAYS") {
+                        ZerpfyCount += 1;
+                        ZerpfyTaysArray.push(`${ZerpfyCount},`);
+                    } else {
+                        ZerpfyCount += 1;
+                        ZerpfyOysArray.push(`${ZerpfyCount},`);
+                    }
                 }
-            }
-        });
+            });
     };
 
     fetchAntiquaOrderedVaccine();
