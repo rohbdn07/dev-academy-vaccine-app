@@ -42,17 +42,16 @@ export default function HomePage() {
     let VaccineNameZerpfy = "";
     let ZerpfyCount = 0;
 
-    const fetchData = () => {
-        dispatch(getDataAction());
-    };
-
     useEffect(() => {
         try {
+            function fetchData() {
+                dispatch(getDataAction());
+            }
             fetchData();
         } catch (error) {
             console.log("there is an error fetching the data", error);
         }
-    }, []);
+    }, [dispatch]);
 
     const fetchAntiquaOrderedVaccine = () => {
         vaccineData !== undefined &&
