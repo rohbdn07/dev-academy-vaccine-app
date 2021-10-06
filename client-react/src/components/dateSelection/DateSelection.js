@@ -13,18 +13,21 @@ export default function DateSelection() {
     );
 
     const getInfoOnSelectedDateOfAllVaccines = (vaccineName) => {
-        return vaccineData.filter((item) => {
-            const selectedDate = moment(startDate).format("YYYY-MM-DD");
-            const getArrivedDate = item.arrived;
-            const expireDate = moment(getArrivedDate)
-                .add(30, "days")
-                .format("YYYY-MM-DD");
+        return (
+            vaccineData !== undefined &&
+            vaccineData?.filter((item) => {
+                const selectedDate = moment(startDate).format("YYYY-MM-DD");
+                const getArrivedDate = item.arrived;
+                const expireDate = moment(getArrivedDate)
+                    .add(30, "days")
+                    .format("YYYY-MM-DD");
 
-            if (item.vaccine === vaccineName) {
-                return expireDate <= selectedDate;
-            }
-            return item;
-        });
+                if (item.vaccine === vaccineName) {
+                    return expireDate <= selectedDate;
+                }
+                return item;
+            })
+        );
     };
 
     const expiredBottleOfAntiqua =
@@ -34,20 +37,28 @@ export default function DateSelection() {
     const expiredBottleOfZerpfy = getInfoOnSelectedDateOfAllVaccines("Zerpfy");
 
     const fetchVaccinationUntilSelectedDate = (vaccineName) => {
-        return vaccinationDoneData.filter((vaccinationDoneItem) => {
-            return vaccineData.some((someItem) => {
-                if (someItem.vaccine === vaccineName) {
-                    if (vaccinationDoneItem.sourceBottle === someItem.id) {
-                        const selectedDate =
-                            moment(startDate).format("YYYY-MM-DD");
-                        const getVaccinationDate = moment(
-                            vaccinationDoneItem.vaccinationDate
-                        ).format("YYYY-MM-DD");
-                        return getVaccinationDate <= selectedDate;
-                    }
-                }
-            });
-        });
+        return (
+            vaccinationDoneData !== undefined &&
+            vaccinationDoneData?.filter((vaccinationDoneItem) => {
+                return (
+                    vaccineData !== undefined &&
+                    vaccineData?.some((someItem) => {
+                        if (someItem.vaccine === vaccineName) {
+                            if (
+                                vaccinationDoneItem.sourceBottle === someItem.id
+                            ) {
+                                const selectedDate =
+                                    moment(startDate).format("YYYY-MM-DD");
+                                const getVaccinationDate = moment(
+                                    vaccinationDoneItem.vaccinationDate
+                                ).format("YYYY-MM-DD");
+                                return getVaccinationDate <= selectedDate;
+                            }
+                        }
+                    })
+                );
+            })
+        );
     };
 
     const totalAntiqueVaccineGivenUntilSelectedDate =
@@ -58,20 +69,28 @@ export default function DateSelection() {
         fetchVaccinationUntilSelectedDate("Zerpfy");
 
     const fetchVaccinationOnSelectedDate = (vaccineName) => {
-        return vaccinationDoneData.filter((vaccinationDoneItem) => {
-            return vaccineData.some((someItem) => {
-                if (someItem.vaccine === vaccineName) {
-                    if (vaccinationDoneItem.sourceBottle === someItem.id) {
-                        const selectedDate =
-                            moment(startDate).format("YYYY-MM-DD");
-                        const getVaccinationDate = moment(
-                            vaccinationDoneItem.vaccinationDate
-                        ).format("YYYY-MM-DD");
-                        return selectedDate === getVaccinationDate;
-                    }
-                }
-            });
-        });
+        return (
+            vaccinationDoneData !== undefined &&
+            vaccinationDoneData?.filter((vaccinationDoneItem) => {
+                return (
+                    vaccineData !== undefined &&
+                    vaccineData?.some((someItem) => {
+                        if (someItem.vaccine === vaccineName) {
+                            if (
+                                vaccinationDoneItem.sourceBottle === someItem.id
+                            ) {
+                                const selectedDate =
+                                    moment(startDate).format("YYYY-MM-DD");
+                                const getVaccinationDate = moment(
+                                    vaccinationDoneItem.vaccinationDate
+                                ).format("YYYY-MM-DD");
+                                return selectedDate === getVaccinationDate;
+                            }
+                        }
+                    })
+                );
+            })
+        );
     };
 
     const antiquaVaccineOnSelectedDate =
@@ -81,26 +100,29 @@ export default function DateSelection() {
     const zerpfyVaccineOnSelectedDate =
         fetchVaccinationOnSelectedDate("Zerpfy");
 
-    const fetchTotalVaccinesGivenatSelectedDate = vaccinationDoneData.filter(
-        (item) => {
+    const fetchTotalVaccinesGivenatSelectedDate =
+        vaccinationDoneData !== undefined &&
+        vaccinationDoneData?.filter((item) => {
             const selectedDate = moment(startDate).format("YYYY-MM-DD");
             const getArrivedDate = moment(item.vaccinationDate).format(
                 "YYYY-MM-DD"
             );
             return selectedDate === getArrivedDate;
-        }
-    );
+        });
 
     const fetchArrivedOrderOfAllVaccines = (vaccineName) => {
-        return vaccineData.filter((item) => {
-            if (item.vaccine === vaccineName) {
-                const selectedDate = moment(startDate).format("YYYY-MM-DD");
-                const getArrivedDate = moment(item.arrived).format(
-                    "YYYY-MM-DD"
-                );
-                return selectedDate === getArrivedDate;
-            }
-        });
+        return (
+            vaccineData !== undefined &&
+            vaccineData?.filter((item) => {
+                if (item.vaccine === vaccineName) {
+                    const selectedDate = moment(startDate).format("YYYY-MM-DD");
+                    const getArrivedDate = moment(item.arrived).format(
+                        "YYYY-MM-DD"
+                    );
+                    return selectedDate === getArrivedDate;
+                }
+            })
+        );
     };
 
     const fetchArrivedOrderOfAntiqua =

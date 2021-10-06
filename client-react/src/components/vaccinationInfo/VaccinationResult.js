@@ -16,34 +16,41 @@ export default function VaccinationResult() {
     let totalNonBinaryTakenVaccine = [];
 
     const fetchVaccinationOnGender = (vaccinationDoneData) => {
-        vaccinationDoneData.map((item, index) => {
-            if (item) {
-                count += 1;
-                totalVaccinationNumber.push(`${count},`);
-            }
-            if (item.gender === "female") {
-                count += 1;
-                totalFemaleTakenVaccine.push(`${count},`);
-            } else if (item.gender === "male") {
-                count += 1;
-                totalMaleTakenVaccine.push(`${count},`);
-            } else {
-                count += 1;
-                totalNonBinaryTakenVaccine.push(`${count},`);
-            }
-        });
+        vaccinationDoneData !== undefined &&
+            vaccinationDoneData?.map((item, index) => {
+                if (item) {
+                    count += 1;
+                    totalVaccinationNumber.push(`${count},`);
+                }
+                if (item.gender === "female") {
+                    count += 1;
+                    totalFemaleTakenVaccine.push(`${count},`);
+                } else if (item.gender === "male") {
+                    count += 1;
+                    totalMaleTakenVaccine.push(`${count},`);
+                } else {
+                    count += 1;
+                    totalNonBinaryTakenVaccine.push(`${count},`);
+                }
+            });
     };
 
     fetchVaccinationOnGender(vaccinationDoneData);
 
     const fetchVaccinationData = (vaccineName) => {
-        return vaccinationDoneData.filter((vaccinationItem) => {
-            return vaccineData.some((someitem) => {
-                if (someitem.vaccine === vaccineName) {
-                    return vaccinationItem.sourceBottle === someitem.id;
-                }
-            });
-        });
+        return (
+            vaccinationDoneData !== undefined &&
+            vaccinationDoneData?.filter((vaccinationItem) => {
+                return (
+                    vaccineData !== undefined &&
+                    vaccineData?.some((someitem) => {
+                        if (someitem.vaccine === vaccineName) {
+                            return vaccinationItem.sourceBottle === someitem.id;
+                        }
+                    })
+                );
+            })
+        );
     };
 
     const totalAntiqueVaccineUsed = fetchVaccinationData("Antiqua");
