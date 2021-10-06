@@ -6,7 +6,7 @@
         "concurrently": "6.2.0"
     },
     "scripts": {
-        "start": "cd backend-node && npm install && node app.js",
+        "start": "cd backend-node && npm install && node server.js",
         "server": "cd backend-node && npm start",
         "client": "cd client-react && npm start",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
