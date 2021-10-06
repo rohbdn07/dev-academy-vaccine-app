@@ -4,7 +4,7 @@
     "description": "creating a simple webpage to display interesting data into beautiful UI with graphs and textual form.",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js",
+        "start": "nodemon server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
