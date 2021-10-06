@@ -8,16 +8,6 @@ const getvaccineRouter = require("./router/getVaccine");
 
 const app = express();
 
-// Serve static assists if in PRODUCTION
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client-react", "build")));
-    app.get("/*", (req, res) => {
-        res.sendFile(
-            path.join(__dirname, "../client-react", "build", "index.html")
-        );
-    });
-}
-
 //connection to Mangodb...
 const dbURI = process.env.MONGODB_URI;
 mangoose
@@ -41,8 +31,18 @@ app.use(express.urlencoded({ extended: true }));
 // enable cors
 app.use(cors());
 
+// Serve static assists if in PRODUCTION
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../client-react/build")));
+    app.get("/*", (req, res) => {
+        res.sendFile(
+            path.join(__dirname, "../client-react/build", "index.html")
+        );
+    });
+}
+
 //get data from db
-app.use(getvaccineRouter);
+app.use("/api", getvaccineRouter);
 
 // The `res.redirect()` function sends back an HTTP 302 by default.
 // When an HTTP client receives a response with status 302, it will send
