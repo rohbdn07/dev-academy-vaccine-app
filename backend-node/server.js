@@ -8,15 +8,15 @@ const getvaccineRouter = require("./router/getVaccine");
 
 const app = express();
 
-//Serve static assists if in PRODUCTION
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, "../client-react", "build")));
-//     app.get("*", (req, res) => {
-//         res.sendFile(
-//             path.join(__dirname, "../client-react", "build", "index.html")
-//         );
-//     });
-// }
+// Serve static assists if in PRODUCTION
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../client-react", "build")));
+    app.get("*", (req, res) => {
+        res.sendFile(
+            path.join(__dirname, "../client-react", "build", "index.html")
+        );
+    });
+}
 
 //connection to Mangodb...
 const dbURI = process.env.MONGODB_URI;
