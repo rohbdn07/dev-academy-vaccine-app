@@ -10,6 +10,6 @@
         "server": "cd backend-node && npm start",
         "client": "cd client-react && npm start",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
+        "heroku-postbuild": "cd client-react && npm install --only=dev && npm install && npm run build"
     }
 }
