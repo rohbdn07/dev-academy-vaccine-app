@@ -31,6 +31,9 @@ app.use(express.urlencoded({ extended: true }));
 // enable cors
 app.use(cors());
 
+//get data from db
+app.use("/api", getvaccineRouter);
+
 // Serve static assists if in PRODUCTION
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client-react/build")));
@@ -41,14 +44,11 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-//get data from db
-app.use("/api", getvaccineRouter);
-
 // The `res.redirect()` function sends back an HTTP 302 by default.
 // When an HTTP client receives a response with status 302, it will send
 // an HTTP request to the URL in the response, in this case `/`
-router.get("*", (req, res) => {
-    res.redirect("/");
-});
+// router.get("*", (req, res) => {
+//     res.redirect("/");
+// });
 
 module.exports = app;
